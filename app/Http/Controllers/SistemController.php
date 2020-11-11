@@ -14,7 +14,7 @@ class SistemController extends Controller
 
     public function home()
     {
-        return  view("templates.index");
+        return  view("layouts.index");
     }
 
     public function registrarse()
