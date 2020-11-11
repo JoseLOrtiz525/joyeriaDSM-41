@@ -15,6 +15,8 @@ class CreateMunicipiosTable extends Migration
     {
         Schema::create('tb_municipios', function (Blueprint $table) {
             $table->bigIncrements('id_municipio');
+            $table->integer('estado_id');
+            $table->string('municipio',45);
             $table->timestamps();
         });
     }

@@ -15,6 +15,7 @@ class CreateEstadosTableble extends Migration
     {
         Schema::create('tb_estados', function (Blueprint $table) {
             $table->bigIncrements('id_estado');
+            $table->string('estado',45);
             $table->timestamps();
         });
     }
