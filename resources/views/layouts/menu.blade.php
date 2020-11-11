@@ -18,9 +18,10 @@
 					<nav id="nav">
 						<ul class="links">
 							<li><a href="{{ route('home') }}">This is Massively</a></li>
-							<li><a href="generic.html">Generic Page</a></li>
-							<li><a href="elements.html">Elements Reference</a></li>
+							<li><a href="generic.php">Generic Page</a></li>
+							<li><a href="elements.php">Elements Reference</a></li>
 							<li><a href="{{ route('login') }}">Iniciar Sesion</a></li>
+							<li><a href="{{ route('registrarse') }}">Registrarse</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
