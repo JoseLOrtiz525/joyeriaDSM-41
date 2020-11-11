@@ -15,6 +15,15 @@ class CreateDetalleMaterialTable extends Migration
     {
         Schema::create('tb_detalle_material', function (Blueprint $table) {
             $table->bigIncrements('id_detalle_meterial');
+            $table->string('material_principal',45);
+            $table->string('material_secundario',45);
+
+            $table->unsignedBigInteger('material_id');
+            $table->foreign('material_id')->references('id_material')->on('material');
+
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id_producto')->on('producto');
+
             $table->timestamps();
         });
     }
