@@ -18,3 +18,9 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('templates.index');
 });
+
+Route::name('login')->get('login/', 'SistemController@login');
+
+Route::name('registrarse')->get('registrarse/', 'SistemController@registrarse');
+
+Route::name('home')->get('home/', 'SistemController@home');
