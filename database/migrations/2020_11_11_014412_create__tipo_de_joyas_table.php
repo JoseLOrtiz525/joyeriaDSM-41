@@ -15,6 +15,7 @@ class CreateTipoDeJoyasTable extends Migration
     {
         Schema::create('tb_tipo_de_joyas', function (Blueprint $table) {
             $table->bigIncrements('id_tipo');
+            $table->string('tipo_joya',45);
             $table->timestamps();
         });
     }

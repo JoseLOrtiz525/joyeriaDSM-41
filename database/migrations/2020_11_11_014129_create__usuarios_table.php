@@ -13,8 +13,8 @@ class CreateClientesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tb_clientes', function (Blueprint $table) {
-            $table->bigIncrements('id_cliente');
+        Schema::create('tb_usuarios', function (Blueprint $table) {
+            $table->bigIncrements('id_usuario');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ class CreateClientesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_clientes');
+        Schema::dropIfExists('tb_usuarios');
     }
 }

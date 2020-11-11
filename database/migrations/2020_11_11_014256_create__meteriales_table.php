@@ -13,8 +13,11 @@ class CreateMeterialesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tb_meteriales', function (Blueprint $table) {
+        Schema::create('tb_materiales', function (Blueprint $table) {
             $table->bigIncrements('id_material');
+            $table->string('nombre',45);
+            $table->string('tipo_material',45);
+
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateMeterialesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_meteriales');
+        Schema::dropIfExists('tb_materiales');
     }
 }

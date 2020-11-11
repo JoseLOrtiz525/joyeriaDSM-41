@@ -13,8 +13,11 @@ class CreateVentasTable extends Migration
      */
     public function up()
     {
-        Schema::create('_ventas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('tb_ventas', function (Blueprint $table) {
+            $table->bigIncrements('id_venta');
+            $table->integer('monto_total',45);
+            $table->integer('direcciones_id',45);
+            $table->integer('clientes_id',45);
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateVentasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_ventas');
+        Schema::dropIfExists('tb_ventas');
     }
 }
