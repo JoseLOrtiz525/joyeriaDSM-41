@@ -19,10 +19,10 @@ class CreateDetalleMaterialTable extends Migration
             $table->string('material_secundario',45);
 
             $table->unsignedBigInteger('material_id');
-            $table->foreign('material_id')->references('id_material')->on('material');
+            $table->foreign('material_id')->references('id_material')->on('tb_materiales');
 
             $table->unsignedBigInteger('producto_id');
-            $table->foreign('producto_id')->references('id_producto')->on('producto');
+            $table->foreign('producto_id')->references('id_producto')->on('tb_productos');
 
             $table->timestamps();
         });

@@ -15,14 +15,14 @@ class CreateDetalleVentasTable extends Migration
     {
         Schema::create('tb_detalle_ventas', function (Blueprint $table) {
             $table->bigIncrements('id_detalle_venta');
-            $table->string('cantidad',45);
-            $table->string('subtotal',45);
+            $table->integer('cantidad');
+            $table->float('subtotal');
 
-            $table->unsignedBigInteger('ventas_id');
-            $table->foreign('ventas_id')->references('id_venta')->on('venta');
+            $table->unsignedBigInteger('venta_id');
+            $table->foreign('venta_id')->references('id_venta')->on('tb_ventas');
 
             $table->unsignedBigInteger('producto_id');
-            $table->foreign('producto_id')->references('id_producto')->on('producto');
+            $table->foreign('producto_id')->references('id_producto')->on('tb_productos');
 
             $table->timestamps();
         });
