@@ -15,9 +15,9 @@ class CreateDireccionesTable extends Migration
     {
         Schema::create('tb_direcciones', function (Blueprint $table) {
             $table->bigIncrements('id_direccion');
-            $table->Integer('clientes_id');
+            $table->Integer('clientes_id',45);
             $table->string('calle',45);
-            $table->Integer('numero_direccion';
+            $table->Integer('numero_direccion',45);
             $table->string('localidad',45);
             $table->string('municipio',45);
             $table->string('estado',45);
