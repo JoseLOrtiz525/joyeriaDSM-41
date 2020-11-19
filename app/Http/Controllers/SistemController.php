@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\UsuariosModel;
 use Illuminate\Http\Request;
+use App\Http\Requests\ValidarRequest;
 
 class SistemController extends Controller
 {
@@ -22,4 +24,17 @@ class SistemController extends Controller
         return  view("templates.registrarse");
     }
 
+    public function usuarios()
+    {
+        $usus = UsuariosModel::all();
+        return  view("templates.usuarios")
+        ->with(['usus' => $usus]);
+    }
+
+    public function guardar(ValidarRequest $request){
+
+    $usu = UsuariosModel::create($request->only('nombre', 'email', 'app' , 'apm' , 'pass', 'tel','matricula','fn'));
+    return redirect()->route('registrarse');
+
+    }
 }

@@ -20,52 +20,50 @@
 	<!-- Wrapper -->
 	<div id="wrapper">
 
-	@include ('layouts.menu')
+		@include ('layouts.menu')
 
 		<!-- Main -->
 		<div id="main">
 
 			<section>
 				<h2>Registrarse</h2>
+<!-- 
+				<form method="post" action="{{ route ('guardar')}}" name="nuevo">
 
-				<form method="post" action="#" class="alt">
+				{{ csrf_field() }}
+
 					<div class="row uniform">
 						<div class="12u 12u$(xsmall)">
-							<input type="text" name="demo-name" id="demo-name" value="" placeholder="Nombre" />
+							<input type="text" name="nombre" placeholder="Nombre" />
 						</div>
 						<div class="12u$ 12u$(xsmall)">
-							<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+							<input type="email" name="email" placeholder="Email" />
 						</div>
 
 						<div class="6u 12u$(xsmall)">
-							<input type="text" name="demo-name" id="demo-name" value="" placeholder="Primer Apellido" />
+							<input type="text" name="app" placeholder="Primer Apellido" />
 						</div>
 						<div class="6u$ 12u$(xsmall)">
-							<input type="email" name="demo-email" id="demo-email" value="" placeholder="Segundo Apellido" />
+							<input type="text" name="apm" placeholder="Segundo Apellido" />
 						</div>
 
 						<div class="6u 12u$(xsmall)">
-							<input type="text" name="demo-name" id="demo-name" value="" placeholder="Contraseña" />
+							<input type="text" name="pass" placeholder="Contraseña" />
 						</div>
-
-
 
 						<div class="12u 12u$(small)">
-							<input type="text" name="demo-name" id="demo-name" value="" placeholder="Telefono" />
+							<input type="text" name="tel" placeholder="Telefono" />
 						</div>
-						
+
 						<div class="4u 12u$(small)">
-							<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+							<input type="radio" name="gen" checked>
 							<label for="demo-priority-low">Hombre</label>
 						</div>
 						<div class="4u 12u$(small)">
-							<input type="radio" id="demo-priority-normal" name="demo-priority">
+							<input type="radio" name="gen">
 							<label for="demo-priority-normal">Mujer</label>
-						</div>
-						<div class="4u$ 12u$(small)">
-							<input type="radio" id="demo-priority-high" name="demo-priority">
-							<label for="demo-priority-high">Indefinido</label>
-						</div>
+						</div> 
+
 						<div class="12u$">
 							<ul class="actions">
 								<li><input type="submit" value="Enviar" class="special" /></li>
@@ -73,7 +71,49 @@
 							</ul>
 						</div>
 					</div>
-				</form>
+				</form> -->
+
+				<form action="{{ route ('guardar')}}" method="POST" name="nuevo">
+
+{{ csrf_field() }}
+
+
+@if(count($errors)>0)
+
+@foreach($errors->all() as $error)
+
+{{ $error }}<br>
+
+@endforeach
+
+<br>
+
+@endif
+<hr>
+Fecha de nacimiento : <input type="date" name="fn">
+<hr>
+Matricula : <input type="text" name="matricula" value="{{ old('matricula')}}">
+
+@if($errors->first('matricula')) <i>{{$errors -> first ('matricula')}}</i>@endif<br>
+
+Nombre : <input type="text" name="nombre" value="{{ old('nombre')}}">
+
+@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif<br>
+
+Email : <input type="text" name="email"><br>
+Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
+Apellido Materno : <input type="text" name="apm"><br>
+Password : <input type="text" name="pass"><br>
+Telefono : <input type="text" name="tel"><br>
+
+<hr>
+<!--*Genero : <input type="text" name="gen"><br>
+Imagen : <input type="text" name="img"><br>
+Grupo : <input type="text" name="grupo"><br>
+*Activo : <input type="text" name="activo"><br> -->
+
+<input type="submit" value="Guardar">
+</form>
 
 				<hr />
 			</section>
