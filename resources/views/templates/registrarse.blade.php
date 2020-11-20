@@ -27,7 +27,7 @@
 
 			<section>
 				<h2>Registrarse</h2>
-<!-- 
+				<!-- 
 				<form method="post" action="{{ route ('guardar')}}" name="nuevo">
 
 				{{ csrf_field() }}
@@ -75,62 +75,62 @@
 
 				<form action="{{ route ('guardar')}}" method="POST" name="nuevo">
 
-{{ csrf_field() }}
+					{{ csrf_field() }}
 
 
-@if(count($errors)>0)
+					@if(count($errors)>0)
 
-@foreach($errors->all() as $error)
+					@foreach($errors->all() as $error)
 
-{{ $error }}<br>
+					{{ $error }}<br>
 
-@endforeach
+					@endforeach
 
-<br>
+					<br>
 
-@endif
+					@endif
 
-Fecha de nacimiento : <input type="date" name="fn">
+					Fecha de nacimiento : <input type="date" name="fn">
 
-<div class="12u 12u$(small)">
+					<div class="12u 12u$(small)">
 
-Matricula : <input type="text" name="matricula" value="{{ old('matricula')}}">
+						Matricula : <input type="text" name="matricula" value="{{ old('matricula')}}">
 
-</div>
+					</div>
 
-@if($errors->first('matricula')) <i>{{$errors -> first ('matricula')}}</i>@endif
-<div class="12u 12u$(small)">
-Nombre : <input type="text" name="nombre" value="{{ old('nombre')}}">
-</div>
-@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif
+					@if($errors->first('matricula')) <i>{{$errors -> first ('matricula')}}</i>@endif
+					<div class="12u 12u$(small)">
+						Nombre : <input type="text" name="nombre" value="{{ old('nombre')}}">
+					</div>
+					@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif
 
-<div class="12u 12u$(small)">
-Email : <input type="text" name="email"><br>
-</div>
+					<div class="12u 12u$(small)">
+						Email : <input type="text" name="email"><br>
+					</div>
 
-<div class="12u 12u$(small)">
-Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
-</div>
+					<div class="12u 12u$(small)">
+						Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
+					</div>
 
-<div class="12u 12u$(small)">
-Apellido Materno : <input type="text" name="apm"><br>
-</div>
+					<div class="12u 12u$(small)">
+						Apellido Materno : <input type="text" name="apm"><br>
+					</div>
 
-<div class="12u 12u$(small)">
-Password : <input type="text" name="pass"><br>
-</div>
+					<div class="12u 12u$(small)">
+						Password : <input type="text" name="pass"><br>
+					</div>
 
-<div class="12u 12u$(small)">
-Telefono : <input type="text" name="tel"><br>
-</div>
-<hr>
-<!--*Genero : <input type="text" name="gen"><br>
+					<div class="12u 12u$(small)">
+						Telefono : <input type="text" name="tel"><br>
+					</div>
+					<hr>
+					<!--*Genero : <input type="text" name="gen"><br>
 Imagen : <input type="text" name="img"><br>
 Grupo : <input type="text" name="grupo"><br>
 *Activo : <input type="text" name="activo"><br> -->
 
-<input type="submit" value="Guardar">
-</form>
+					<input type="submit" value="Guardar">
+				</form>
 
 				<hr />
 			</section>
