@@ -89,23 +89,40 @@
 <br>
 
 @endif
-<hr>
+
 Fecha de nacimiento : <input type="date" name="fn">
-<hr>
+
+<div class="12u 12u$(small)">
+
 Matricula : <input type="text" name="matricula" value="{{ old('matricula')}}">
 
-@if($errors->first('matricula')) <i>{{$errors -> first ('matricula')}}</i>@endif<br>
+</div>
 
+@if($errors->first('matricula')) <i>{{$errors -> first ('matricula')}}</i>@endif
+<div class="12u 12u$(small)">
 Nombre : <input type="text" name="nombre" value="{{ old('nombre')}}">
+</div>
+@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif
 
-@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif<br>
-
+<div class="12u 12u$(small)">
 Email : <input type="text" name="email"><br>
-Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
-Apellido Materno : <input type="text" name="apm"><br>
-Password : <input type="text" name="pass"><br>
-Telefono : <input type="text" name="tel"><br>
+</div>
 
+<div class="12u 12u$(small)">
+Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
+</div>
+
+<div class="12u 12u$(small)">
+Apellido Materno : <input type="text" name="apm"><br>
+</div>
+
+<div class="12u 12u$(small)">
+Password : <input type="text" name="pass"><br>
+</div>
+
+<div class="12u 12u$(small)">
+Telefono : <input type="text" name="tel"><br>
+</div>
 <hr>
 <!--*Genero : <input type="text" name="gen"><br>
 Imagen : <input type="text" name="img"><br>
