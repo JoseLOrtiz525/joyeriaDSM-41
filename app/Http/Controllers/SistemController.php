@@ -37,4 +37,10 @@ class SistemController extends Controller
     return redirect()->route('registrarse');
 
     }
+
+    public function elements()
+    {
+        return  view("templates.elements");
+    }
+
 }

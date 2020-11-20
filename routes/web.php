@@ -28,3 +28,5 @@ Route::name('home')->get('home/', 'SistemController@home');
 Route::name('usuarios')->get('usuarios/', 'SistemController@usuarios');
 
 Route::name('guardar')->post('guardar/', 'SistemController@guardar');
+
+Route::name('elements')->get('elements/', 'SistemController@elements');

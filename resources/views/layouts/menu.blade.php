@@ -1,9 +1,9 @@
 <!-- Intro -->
 <div id="intro">
-						<h1>This is<br />
-						Massively</h1>
-						<p>A free, fully responsive HTML5 + CSS3 site template designed by <a href="https://html5up.net">HTML5 UP</a><br />
-						and distributed by <a href="https://themewagon.com/">ThemeWagon</a>.</p>
+						<h1>Joyeria<br />
+						Luminoseté</h1>
+						Encontrar las mejores joyas <br>
+						y venderlas al mejor precio.
 						<ul class="actions">
 							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -11,7 +11,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="{{ route('home') }}" class="logo">Massively</a>
+						<a href="{{ route('home') }}" class="logo">Luminoseté</a>
 					</header>
 
 				<!-- Nav -->
@@ -19,7 +19,7 @@
 						<ul class="links">
 							<li><a href="{{ route('home') }}">This is Massively</a></li>
 							<li><a href="generic.php">Generic Page</a></li>
-							<li><a href="elements.php">Elements Reference</a></li>
+							<li><a href="{{ route('elements') }}">Elements Reference</a></li>
 							<li><a href="{{ route('login') }}">Iniciar Sesion</a></li>
 							<li><a href="{{ route('registrarse') }}">Registrarse</a></li>
 							<li><a href="{{ route('usuarios') }}">Ver usuarios</a></li>

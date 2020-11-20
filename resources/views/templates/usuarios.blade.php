@@ -30,39 +30,63 @@
 
 				<h2>Usuarios registrados</h2>
 
-				<form method="post" action="#" class="alt">
-					<div class="row uniform">
-
-						@foreach($usus as $usu)
-
-						<div id="">
-							<div class="">{{ $usu->id_usuario}}</div>
-							<h1>
-								{{ $usu->app }} {{ $usu->apm }} {{ $usu->nombre }}
-							</h1>
-							<div class="">
-								
-						@if($usu->gen == 0)
+				<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>ID</th>
+													<th>Matricula</th>
+													<th>Nombre</th>
+													<th>Genero</th>
+													<th>Email</th>
+												</tr>
+											</thead>
+											@foreach($usus as $usu)
+											<tbody>
+												<tr>
+													<td>{{ $usu->id_usuario}}</td>
+													<td>{{ $usu->matricula}}</td>
+													<td>{{ $usu->app }} {{ $usu->apm }} {{ $usu->nombre }}</td>
+													<td>	@if($usu->gen == 0)
 						Masculino
 						@else
 						Femenino
-						@endif <br>
-								{{ $usu->matricula}}
-								{{ $usu->email}} <br>
-								{{ $usu->pass }} <br>
-								{{ $usu->img }} <br>
-								{{ $usu->id_grupo }} <br>
-								{{ $usu->id_tipo}} <br>
-								{{ $usu->activo }} <br>
-							</div>
-						</div>
+						@endif</td>
+													<td>{{ $usu->email}}</td>
+												</tr>
+											</tbody>
+
+											@endforeach
+											<!-- <tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot> -->
+										</table>
+									</div>
+
+				
+
+				<!-- <div id="">
+					<div class=""></div>
+					<h1>
 						
-						@endforeach
+					</h1>
+					<div class="">
 
+					 <br>
+						
+						 <br>
+						{{ $usu->pass }} <br>
+						{{ $usu->img }} <br>
+						{{ $usu->id_grupo }} <br>
+						{{ $usu->id_tipo}} <br>
+						{{ $usu->activo }} <br>
 					</div>
-				</form>
+				</div> -->
 
-				<hr />
+	
 			</section>
 
 
