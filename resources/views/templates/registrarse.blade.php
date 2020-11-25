@@ -77,27 +77,12 @@
 
 					{{ csrf_field() }}
 
-
-					@if(count($errors)>0)
-
-					@foreach($errors->all() as $error)
-
-					{{ $error }}<br>
-
-					@endforeach
-
-					<br>
-
-					@endif
-
 					Fecha de nacimiento : <input type="date" name="fn">
+					@if($errors->first('matricula')) <i>{{$errors -> first ('fn')}}</i>@endif
 
 					<div class="12u 12u$(small)">
-
 						Matricula : <input type="text" name="matricula" value="{{ old('matricula')}}">
-
 					</div>
-
 					@if($errors->first('matricula')) <i>{{$errors -> first ('matricula')}}</i>@endif
 					<div class="12u 12u$(small)">
 						Nombre : <input type="text" name="nombre" value="{{ old('nombre')}}">
@@ -107,29 +92,31 @@
 					<div class="12u 12u$(small)">
 						Email : <input type="text" name="email"><br>
 					</div>
-
+					@if($errors->first('nombre')) <i>{{$errors -> first ('email')}}</i>@endif
 					<div class="12u 12u$(small)">
 						Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
 					</div>
-
+					@if($errors->first('nombre')) <i>{{$errors -> first ('app')}}</i>@endif
 					<div class="12u 12u$(small)">
 						Apellido Materno : <input type="text" name="apm"><br>
 					</div>
-
+					@if($errors->first('nombre')) <i>{{$errors -> first ('apm')}}</i>@endif
 					<div class="12u 12u$(small)">
 						Password : <input type="text" name="pass"><br>
 					</div>
-
+					@if($errors->first('nombre')) <i>{{$errors -> first ('pass')}}</i>@endif
 					<div class="12u 12u$(small)">
 						Telefono : <input type="text" name="tel"><br>
+						@if($errors->first('nombre')) <i>{{$errors -> first ('tel')}}</i>@endif
 					</div>
+					
 					<hr>
 					<!--*Genero : <input type="text" name="gen"><br>
 Imagen : <input type="text" name="img"><br>
 Grupo : <input type="text" name="grupo"><br>
 *Activo : <input type="text" name="activo"><br> -->
 
-					<input type="submit" value="Guardar">
+					<input type="submit" value="Enviar">
 				</form>
 
 				<hr />
