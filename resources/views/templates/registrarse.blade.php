@@ -1,77 +1,40 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
+	Editorial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 
 <head>
-	<title>Generic Page - Massively by HTML5 UP</title>
+	<title>Inicio</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+
 </head>
 
-<body class="is-loading">
+<body class="is-preload">
 
 	<!-- Wrapper -->
 	<div id="wrapper">
 
-		@include ('layouts.menu')
-
 		<!-- Main -->
 		<div id="main">
+			<div class="inner">
 
-			<section>
-				<h2>Registrarse</h2>
-				<!-- 
-				<form method="post" action="{{ route ('guardar')}}" name="nuevo">
+				<!-- Header -->
+				<header id="header">
+					<a href="{{ route('home')}}" class="logo"><strong>Joyeria</strong> Luminoseté</a>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+					</ul>
+				</header>
 
-				{{ csrf_field() }}
-
-					<div class="row uniform">
-						<div class="12u 12u$(xsmall)">
-							<input type="text" name="nombre" placeholder="Nombre" />
-						</div>
-						<div class="12u$ 12u$(xsmall)">
-							<input type="email" name="email" placeholder="Email" />
-						</div>
-
-						<div class="6u 12u$(xsmall)">
-							<input type="text" name="app" placeholder="Primer Apellido" />
-						</div>
-						<div class="6u$ 12u$(xsmall)">
-							<input type="text" name="apm" placeholder="Segundo Apellido" />
-						</div>
-
-						<div class="6u 12u$(xsmall)">
-							<input type="text" name="pass" placeholder="Contraseña" />
-						</div>
-
-						<div class="12u 12u$(small)">
-							<input type="text" name="tel" placeholder="Telefono" />
-						</div>
-
-						<div class="4u 12u$(small)">
-							<input type="radio" name="gen" checked>
-							<label for="demo-priority-low">Hombre</label>
-						</div>
-						<div class="4u 12u$(small)">
-							<input type="radio" name="gen">
-							<label for="demo-priority-normal">Mujer</label>
-						</div> 
-
-						<div class="12u$">
-							<ul class="actions">
-								<li><input type="submit" value="Enviar" class="special" /></li>
-								<li><input type="reset" value="Reset" /></li>
-							</ul>
-						</div>
-					</div>
-				</form> -->
 
 				<form action="{{ route ('guardar')}}" method="POST" name="nuevo">
 
@@ -80,36 +43,38 @@
 					Fecha de nacimiento : <input type="date" name="fn">
 					@if($errors->first('matricula')) <i>{{$errors -> first ('fn')}}</i>@endif
 
-					<div class="12u 12u$(small)">
+					<div>
 						Matricula : <input type="text" name="matricula" value="{{ old('matricula')}}">
 					</div>
 					@if($errors->first('matricula')) <i>{{$errors -> first ('matricula')}}</i>@endif
-					<div class="12u 12u$(small)">
+					<div>
 						Nombre : <input type="text" name="nombre" value="{{ old('nombre')}}">
 					</div>
 					@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif
 
-					<div class="12u 12u$(small)">
+					<div>
 						Email : <input type="text" name="email"><br>
 					</div>
 					@if($errors->first('nombre')) <i>{{$errors -> first ('email')}}</i>@endif
-					<div class="12u 12u$(small)">
+
+					<div>
 						Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
 					</div>
 					@if($errors->first('nombre')) <i>{{$errors -> first ('app')}}</i>@endif
-					<div class="12u 12u$(small)">
+
+					<div>
 						Apellido Materno : <input type="text" name="apm"><br>
 					</div>
 					@if($errors->first('nombre')) <i>{{$errors -> first ('apm')}}</i>@endif
-					<div class="12u 12u$(small)">
+					<div>
 						Password : <input type="text" name="pass"><br>
 					</div>
 					@if($errors->first('nombre')) <i>{{$errors -> first ('pass')}}</i>@endif
-					<div class="12u 12u$(small)">
+					<div>
 						Telefono : <input type="text" name="tel"><br>
 						@if($errors->first('nombre')) <i>{{$errors -> first ('tel')}}</i>@endif
 					</div>
-					
+
 					<hr>
 					<!--*Genero : <input type="text" name="gen"><br>
 Imagen : <input type="text" name="img"><br>
@@ -119,23 +84,14 @@ Grupo : <input type="text" name="grupo"><br>
 					<input type="submit" value="Enviar">
 				</form>
 
-				<hr />
-			</section>
-
-
+			</div>
 		</div>
 
-		@include ('layouts.footer')
+		@include ('layouts.menu')
 
 	</div>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	@include ('layouts.footer')
 
 </body>
 
