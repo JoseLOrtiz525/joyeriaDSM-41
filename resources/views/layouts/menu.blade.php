@@ -33,8 +33,8 @@
 									</header>
 									<ul>
 										<li><a href="{{ route('home')}}">Pagina de Inicio</a></li>
-										<li><a href="generic.html">Catalogo de productos</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="generic.">Catalogo de productos</a></li>
+										<li><a href="elements.html">a</a></li>
 										<li>
 											<span class="opener">Sesion</span>
 											<ul>
@@ -46,9 +46,9 @@
 										<li><a href="#">Etiam Dolore</a></li>
 										<li><a href="#">Adipiscing</a></li>
 										<li>
-											<span class="opener">Another Submenu</span>
+											<span class="opener">Tablas(cambiar nombre)</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="{{ route('usuarios')}}">Tabla Usuario</a></li>
 												<li><a href="#">Ipsum Adipiscing</a></li>
 												<li><a href="#">Tempus Magna</a></li>
 												<li><a href="#">Feugiat Veroeros</a></li>
