@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\UsuariosModel;
+use App\ProductosModel;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidarRequest;
+use App\Http\Requests\ValidarProductosRequest;
 
 class SistemController extends Controller
 {
@@ -24,6 +26,13 @@ class SistemController extends Controller
         return  view("templates.registrarse");
     }
 
+    public function catalogo()
+    {
+        $usus = ProductosModel::all();
+        return  view("templates.catalogo")
+        ->with(['usus' => $usus]);
+    }
+
     public function usuarios()
     {
         $usus = UsuariosModel::all();
@@ -35,12 +44,24 @@ class SistemController extends Controller
 
     $usu = UsuariosModel::create($request->only('nombre', 'email', 'app' , 'apm' , 'pass', 'tel','matricula','fn'));
     return redirect()->route('registrarse');
-
     }
 
-    public function elements()
+    public function guardarProductos(ValidarProductosRequest $request2){
+
+        $usu = ProductosModel::create($request2->only('nombre_producto','no_existencias', 'precio','descripcion','medida','precio_oferta'));
+        return redirect()->route('registrarProductos');
+        }
+
+    public function registrarProductos()
     {
-        return  view("templates.elements");
+        return  view("templates.registrar_productos");
+    }
+
+    public function productos()
+    {
+        $usus = ProductosModel::all();
+        return  view("templates.productos")
+        ->with(['usus' => $usus]);
     }
 
 }

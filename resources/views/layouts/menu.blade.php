@@ -33,30 +33,55 @@
 									</header>
 									<ul>
 										<li><a href="{{ route('home')}}">Pagina de Inicio</a></li>
-										<li><a href="generic.">Catalogo de productos</a></li>
-										<li><a href="elements.html">a</a></li>
+										<li><a href="{{ route('catalogo')}}">Catalogo de productos</a></li>
 										<li>
-											<span class="opener">Sesion</span>
+											<span class="opener">Tablas (Cambiar Nombre)</span>
+											<ul>
+												<li><a href="#">Registrarse</a></li>
+												<li><a href="#">Ver perfil</a></li>
+												<li><a href="#">Iniciar sesion</a></li>
+												<li><a href="#">Registrarse</a></li>
+												<li><a href="#">Ver perfil</a></li>
+												<li><a href="#">Iniciar sesion</a></li>
+												<li><a href="#">Iniciar sesion</a></li>
+											</ul>
+										</li>
+										<li>
+											<span class="opener">Sesion/Cliente</span>
 											<ul>
 												<li><a href="{{ route('registrarse')}}">Registrarse</a></li>
 												<li><a href="#">Ver perfil</a></li>
 												<li><a href="#">Iniciar sesion</a></li>
 											</ul>
 										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
 										<li>
-											<span class="opener">Tablas(cambiar nombre)</span>
+											<span class="opener">Productos</span>
 											<ul>
-												<li><a href="{{ route('usuarios')}}">Tabla Usuario</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="{{ route('registrarProductos')}}">Registrar Productos</a></li>
+												<li><a href="{{ route('productos')}}">Ver lista de productos</a></li>
+												
 											</ul>
 										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
+										<li>
+											<span class="opener">Ventas</span>
+											<ul>
+												<li><a href="#">Registrarse</a></li>
+												<li><a href="#">Ver perfil</a></li>
+												<li><a href="#">Iniciar sesion</a></li>
+												
+											</ul>
+										</li>
+										<li>
+											<span class="opener">Materiales</span>
+											<ul>
+												<li><a href="#">Registrarse</a></li>
+												<li><a href="#">Ver perfil</a></li>
+												<li><a href="#">Iniciar sesion</a></li>
+												
+											</ul>
+										</li>
+										
+										
 									</ul>
 								</nav>
 

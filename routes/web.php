@@ -29,4 +29,12 @@ Route::name('usuarios')->get('usuarios/', 'SistemController@usuarios');
 
 Route::name('guardar')->post('guardar/', 'SistemController@guardar');
 
+Route::name('guardarProductos')->post('guardarProductos/', 'SistemController@guardarProductos');
+
 Route::name('elements')->get('elements/', 'SistemController@elements');
+
+Route::name('productos')->get('productos/', 'SistemController@productos');
+
+Route::name('catalogo')->get('catalogo/', 'SistemController@catalogo');
+
+Route::name('registrarProductos')->get('registrarProductos/', 'SistemController@registrarProductos');
