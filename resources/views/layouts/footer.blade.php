@@ -5,7 +5,27 @@
 			<script href="{{ asset('assets/js/breakpoints.min.js')}} "></script>
 			<script href="{{ asset('assets/js/util.js')}} "></script>
 			<script href="{{ asset('assets/js/main.js')}} "></script>
-
+			
+			<script>
+window.onload = function (){
+    if(typeof history.pushState === "function"){
+      history.pushState("jibberish", null, null);
+      window.onpopstate = function (){
+        history.pushSate('newjibberish', null, null);  
+      };
+    } else{
+      var ignoreHashChange = true;
+      window.onhashchange = function () {
+        if (!ingnoreHasChange){
+          ignoreHashChange = true;
+          window.location.hash = Math.random();
+        } else {
+          ignoreHashChange = false;
+        }
+      };
+    }
+  }
+</script>
 			<script>
 				(function($) {
 

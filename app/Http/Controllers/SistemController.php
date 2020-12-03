@@ -26,6 +26,11 @@ class SistemController extends Controller
         return  view("templates.registrarse");
     }
 
+    public function iniciar_sesion()
+    {
+        return  view("templates.iniciar_sesion");
+    }
+
     public function catalogo()
     {
         $usus = ProductosModel::all();

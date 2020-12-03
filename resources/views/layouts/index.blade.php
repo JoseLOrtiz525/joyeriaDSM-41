@@ -22,17 +22,7 @@
 					<div id="main">
 						<div class="inner">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="{{ route('home')}}" class="logo"><strong>Joyeria</strong> Luminoseté</a>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header>
+						@include ('layouts.header')
 
 							<!-- Banner -->
 								<section id="banner">
@@ -157,3 +147,25 @@
 
 	</body>
 </html>
+
+<!-- <script>
+window.onload = function (){
+	if(typeof history.pushState === "function"){
+		history.pushState("jibberish",null,null);
+		window.onpopstate = function(){
+			history.pushState("newjibberish",null,null);
+		};
+	}else{
+		var ignoreHashChange =  true;
+		window.onhashchange = function(){
+			if (!ignoreHasChange) {
+				ignoreHashChange = true;
+				window.location.hash = Math.random();				
+			}else{
+				ignoreHashChange = false;
+			}
+		}
+	}
+}
+</script> -->
+

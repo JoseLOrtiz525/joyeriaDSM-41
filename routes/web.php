@@ -23,6 +23,8 @@ Route::name('login')->get('login/', 'SistemController@login');
 
 Route::name('registrarse')->get('registrarse/', 'SistemController@registrarse');
 
+Route::name('iniciar_sesion')->get('iniciar_sesion/', 'SistemController@iniciar_sesion');
+
 Route::name('home')->get('home/', 'SistemController@home');
 
 Route::name('usuarios')->get('usuarios/', 'SistemController@usuarios');
@@ -36,5 +38,9 @@ Route::name('elements')->get('elements/', 'SistemController@elements');
 Route::name('productos')->get('productos/', 'SistemController@productos');
 
 Route::name('catalogo')->get('catalogo/', 'SistemController@catalogo');
+
+Route::name('validar')->post('validar/', 'LoginController@validar');
+
+Route::name('logout')->get('logout/', 'LoginController@logout');
 
 Route::name('registrarProductos')->get('registrarProductos/', 'SistemController@registrarProductos');

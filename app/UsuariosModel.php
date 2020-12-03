@@ -16,6 +16,8 @@ class UsuariosModel extends Model
        'pass',
        'tel',
        'matricula',
-       'fn'
+       'fn',
+       'tipo_usuario',
+       'id_usuario'
     ];
 }
