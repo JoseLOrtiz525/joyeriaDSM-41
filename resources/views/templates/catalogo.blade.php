@@ -60,6 +60,7 @@
 							<th>
 								<div class="card">
 									<img src="{{asset('images/joya1.jpg')}}" alt="Imagen">
+									<!-- {{ asset('img/'.$usu->img) }} -->
 									<div class="container">
 										{{ $usu->nombre_producto}}
 										{{ $usu->no_existencias}}
@@ -79,6 +80,7 @@
 							<th>
 								<div class="card">
 									<img src="{{asset('images/joya2.jpg')}}" alt="Imagen">
+									<!-- {{ asset('img/'.$usu->img) }} -->
 									<div class="container">
 										{{ $usu->nombre_producto}}
 										{{ $usu->no_existencias}}
@@ -98,6 +100,7 @@
 							<th>
 								<div class="card">
 									<img src="{{asset('images/joya3.jpg')}}" alt="Imagen">
+									<!-- {{ asset('img/'.$usu->img) }} -->
 									<div class="container">
 										{{ $usu->nombre_producto}}
 										{{ $usu->no_existencias}}

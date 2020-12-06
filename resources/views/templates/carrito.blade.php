@@ -54,7 +54,7 @@
 
 					@foreach($usus as $usu)
 
-
+					
 					<table style="width:100%">
 						<tr>
 							<th>
