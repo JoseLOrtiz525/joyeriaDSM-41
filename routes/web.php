@@ -44,3 +44,7 @@ Route::name('validar')->post('validar/', 'LoginController@validar');
 Route::name('logout')->get('logout/', 'LoginController@logout');
 
 Route::name('registrarProductos')->get('registrarProductos/', 'SistemController@registrarProductos');
+
+//rutas de paypal
+Route::get('/paypal/pay', 'PaymentController@payWithPayPal');
+Route::get('/paypal/status', 'PaymentController@payPalStatus');
