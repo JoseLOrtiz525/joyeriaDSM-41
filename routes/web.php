@@ -47,4 +47,4 @@ Route::name('registrarProductos')->get('registrarProductos/', 'SistemController@
 
 Route::name('carrito')->get('carrito/', 'SistemController@carrito');
 
-Route::name('addCarrito')->get('addCarrito/(id)', 'SistemController@addCarrito');
+Route::name('addCarrito')->get('addCarrito/{id?}', 'SistemController@addCarrito');
