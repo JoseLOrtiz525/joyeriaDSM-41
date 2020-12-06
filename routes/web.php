@@ -44,3 +44,7 @@ Route::name('validar')->post('validar/', 'LoginController@validar');
 Route::name('logout')->get('logout/', 'LoginController@logout');
 
 Route::name('registrarProductos')->get('registrarProductos/', 'SistemController@registrarProductos');
+
+Route::name('carrito')->get('carrito/', 'SistemController@carrito');
+
+Route::name('addCarrito')->get('addCarrito/(id)', 'SistemController@addCarrito');

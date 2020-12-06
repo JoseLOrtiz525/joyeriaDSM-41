@@ -10,6 +10,7 @@ use App\Http\Requests\ValidarProductosRequest;
 
 class SistemController extends Controller
 {
+    
     public function login()
     {
     
@@ -68,5 +69,15 @@ class SistemController extends Controller
         return  view("templates.productos")
         ->with(['usus' => $usus]);
     }
+
+    public function carrito()
+    {
+        return view('templates.carrito');
+    }
+
+    public function addCarrito()
+    {
+    }
+    
 
 }
