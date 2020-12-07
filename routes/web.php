@@ -48,3 +48,7 @@ Route::name('registrarProductos')->get('registrarProductos/', 'SistemController@
 Route::name('carrito')->get('carrito/', 'SistemController@carrito');
 
 Route::name('addCarrito')->get('addCarrito/{id?}', 'SistemController@addCarrito');
+
+Route::get('/paypal/pay', 'PaymentController@payWithPayPal');
+
+Route::get('/paypal/status', 'PaymentController@payPalStatus');
