@@ -48,3 +48,15 @@ Route::name('registrarProductos')->get('registrarProductos/', 'SistemController@
 //rutas de paypal
 Route::get('/paypal/pay', 'PaymentController@payWithPayPal');
 Route::get('/paypal/status', 'PaymentController@payPalStatus');
+
+
+
+//-------------------------------------------Ventas--------------------------------------------------------------
+Route::name('ventas')->get('ventas/', 'CRUDController@ventas');
+Route::name('guardarVentas')->post('guardarVentas/', 'CRUDController@guardarVentas');
+Route::name('registrarVentas')->get('registrarVentas/', 'CRUDController@registrarVentas');
+
+Route::name('modificarVentas')->get('modificarVentas/{id}', 'CRUDController@modificarVentas');
+Route::name('salvarVentas')->put('salvarVentas/{id}', 'CRUDController@salvarVentas');
+
+Route::name('borrarVenta')->get('borrarVenta/{id}', 'CRUDController@borrarVenta');
