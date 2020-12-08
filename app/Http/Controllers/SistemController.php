@@ -10,6 +10,7 @@ use App\Http\Requests\ValidarProductosRequest;
 
 class SistemController extends Controller
 {
+    
     public function login()
     {
     
@@ -67,6 +68,27 @@ class SistemController extends Controller
         $usus = ProductosModel::all();
         return  view("templates.productos")
         ->with(['usus' => $usus]);
+    }
+
+    public function carrito()
+    {
+        return view('templates.carrito');
+    }
+
+    public function addCarrito($id=null)
+    {
+        $usus = ProductosModel::all();
+        return view('templates.carrito')
+        ->with('id', $id)
+        ->with(['usus' => $usus]);
+    }
+
+    public function detalleProducto($id=null)
+    {
+        $usus = ProductosModel::find($id);
+        return view('templates.detalle_producto')
+        ->with('id', $id)
+        ->with(['usu' => $usus]);
     }
 
 }

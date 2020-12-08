@@ -53,8 +53,10 @@
 
 							</tr>
 						</tbody>
-
+						
 						@endforeach
+						
+
 						<!-- <tfoot>
 												<tr>
 													<td colspan="2"></td>

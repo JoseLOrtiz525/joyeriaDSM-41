@@ -48,23 +48,18 @@
 				@include ('layouts.header')
 
 
-				<h2>Catalogo de productos</h2>
-				<l1 class="mr-1">
-					<a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">
-					Paypal
-					</a>
+				<h2>Carrito</h2>
 
 				<div>
 
 					@foreach($usus as $usu)
 
-
+					
 					<table style="width:100%">
 						<tr>
 							<th>
 								<div class="card">
 									<img src="{{asset('images/joya1.jpg')}}" alt="Imagen">
-									<!-- {{ asset('img/'.$usu->img) }} -->
 									<div class="container">
 										{{ $usu->nombre_producto}}
 										{{ $usu->no_existencias}}
@@ -73,8 +68,10 @@
 										{{ $usu->medida }}
 										{{ $usu->precio_oferta}}
 										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+										<a href="{{route('addCarrito')}}" class="btn btn-primary btn-lg
+						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+										<a href="{{route('detalleProducto')}}" class="btn btn-secondaty btn-lg
+						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
 									</div>
 								</div>
 							</th>
@@ -82,7 +79,6 @@
 							<th>
 								<div class="card">
 									<img src="{{asset('images/joya2.jpg')}}" alt="Imagen">
-									<!-- {{ asset('img/'.$usu->img) }} -->
 									<div class="container">
 										{{ $usu->nombre_producto}}
 										{{ $usu->no_existencias}}
@@ -91,8 +87,10 @@
 										{{ $usu->medida }}
 										{{ $usu->precio_oferta}}
 										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+										<a href="{{route('addCarrito')}}" class="btn btn-primary btn-lg
+						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+										<a href="" class="btn btn-secondaty btn-lg
+						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
 									</div>
 								</div>
 							</th>
@@ -100,7 +98,6 @@
 							<th>
 								<div class="card">
 									<img src="{{asset('images/joya3.jpg')}}" alt="Imagen">
-									<!-- {{ asset('img/'.$usu->img) }} -->
 									<div class="container">
 										{{ $usu->nombre_producto}}
 										{{ $usu->no_existencias}}
@@ -109,8 +106,10 @@
 										{{ $usu->medida }}
 										{{ $usu->precio_oferta}}
 										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+										<a href="{{route('addCarrito')}}" class="btn btn-primary btn-lg
+						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+										<a href="" class="btn btn-secondaty btn-lg
+						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
 									</div>
 								</div>
 							</th>
@@ -122,34 +121,7 @@
 					@endforeach
 
 
-					<!-- <tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot> -->
-
 				</div>
-
-
-
-				<!-- <div id="">
-					<div class=""></div>
-					<h1>
-						
-					</h1>
-					<div class="">
-
-					 <br>
-						
-						 <br>
-						{{ $usu->pass }} <br>
-						{{ $usu->img }} <br>
-						{{ $usu->id_grupo }} <br>
-						{{ $usu->id_tipo}} <br>
-						{{ $usu->activo }} <br>
-					</div>
-				</div> -->
 
 			</div>
 		</div>
