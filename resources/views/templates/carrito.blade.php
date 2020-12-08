@@ -70,7 +70,7 @@
 										<br></br>
 										<a href="{{route('addCarrito')}}" class="btn btn-primary btn-lg
 						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="" class="btn btn-secondaty btn-lg
+										<a href="{{route('detalleProducto')}}" class="btn btn-secondaty btn-lg
 						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
 									</div>
 								</div>

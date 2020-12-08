@@ -69,10 +69,8 @@
 										{{ $usu->medida }}
 										{{ $usu->precio_oferta}}
 										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="btn btn-primary btn-lg
-						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="" class="btn btn-secondaty btn-lg
-						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
+										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
 									</div>
 								</div>
 							</th>
@@ -89,10 +87,8 @@
 										{{ $usu->medida }}
 										{{ $usu->precio_oferta}}
 										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="btn btn-primary btn-lg
-						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="" class="btn btn-secondaty btn-lg
-						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
+										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
 									</div>
 								</div>
 							</th>
@@ -109,10 +105,8 @@
 										{{ $usu->medida }}
 										{{ $usu->precio_oferta}}
 										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="btn btn-primary btn-lg
-						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="" class="btn btn-secondaty btn-lg
-						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
+										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
 									</div>
 								</div>
 							</th>

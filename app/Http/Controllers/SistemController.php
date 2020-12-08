@@ -82,6 +82,13 @@ class SistemController extends Controller
         ->with('id', $id)
         ->with(['usus' => $usus]);
     }
-    
+
+    public function detalleProducto($id=null)
+    {
+        $usus = ProductosModel::find($id);
+        return view('templates.detalle_producto')
+        ->with('id', $id)
+        ->with(['usu' => $usus]);
+    }
 
 }
