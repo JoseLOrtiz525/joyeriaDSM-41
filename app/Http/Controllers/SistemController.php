@@ -52,6 +52,24 @@ class SistemController extends Controller
     return redirect()->route('registrarse');
     }
 
+    public function modificar(UsuariosModel $id){
+        return view("templates.editar")
+            ->with(['usu' => $id]);
+    }
+    public function salvar(UsuariosModel $id, Request $request){
+
+             $id->update($request->only('nombre', 'email', 'app' , 'apm' , 'pass', 'tel','matricula','fn'));
+
+            return redirect()->route('usuarios');
+    }
+
+    public function borrar(UsuariosModel $id){
+        $id->delete();
+        return redirect()->route('usuarios');
+    }
+
+
+
     public function guardarProductos(ValidarProductosRequest $request2){
 
         $usu = ProductosModel::create($request2->only('nombre_producto','no_existencias', 'precio','descripcion','medida','precio_oferta'));
@@ -62,6 +80,24 @@ class SistemController extends Controller
     {
         return  view("templates.registrar_productos");
     }
+
+    public function modificarProductos(ProductosModel $id){
+        return view("templates.editarProductos")
+            ->with(['usu' => $id]);
+    }
+    public function salvarProductos(ProductosModel $id, Request $request){
+
+             $id->update($request->only('nombre_producto','no_existencias', 'precio','descripcion','medida','precio_oferta'));
+
+            return redirect()->route('productos');
+    }
+
+    public function borrarProducto(ProductosModel $id){
+        $id->delete();
+        return redirect()->route('productos');
+    }
+
+
 
     public function productos()
     {
