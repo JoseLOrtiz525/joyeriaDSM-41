@@ -50,3 +50,7 @@ Route::name('carrito')->get('carrito/', 'SistemController@carrito');
 Route::name('addCarrito')->get('addCarrito/{id?}', 'SistemController@addCarrito');
 
 Route::name('detalleProducto')->get('detalleProducto/{id?}', 'SistemController@detalleProducto');
+
+Route::get('/paypal/pay', 'PaymentController@payWithPayPal');
+
+Route::get('/paypal/status', 'PaymentController@payPalStatus');
