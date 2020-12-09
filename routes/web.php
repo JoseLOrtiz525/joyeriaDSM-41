@@ -82,3 +82,7 @@ Route::name('modificarMateriales')->get('modificarMateriales/{id}', 'CRUDControl
 Route::name('salvarMateriales')->put('salvarMateriales/{id}', 'CRUDController@salvarMateriales');
 
 Route::name('borrarMaterial')->get('borrarMaterial/{id}', 'CRUDController@borrarMaterial');
+
+Route::name('addCarrito')->get('addCarrito/{id?}', 'SistemController@addCarrito');
+
+Route::name('detalleProducto')->get('detalleProducto/{id?}', 'SistemController@detalleProducto');
