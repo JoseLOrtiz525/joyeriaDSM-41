@@ -29,8 +29,10 @@ class CRUDController extends Controller
         public function ventas()
         {
             $usus = VentasModel::all();
+            $comps = UsuariosModel::all();
             return  view("templates.ventas")
-            ->with(['usus' => $usus]);
+            ->with(['usus' => $usus])
+            ->with(['comps' => $comps]);
         }
 
         

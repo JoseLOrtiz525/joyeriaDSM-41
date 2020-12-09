@@ -45,7 +45,11 @@
 							<tr>
 								<td>$ {{ $usu->monto_total}}</td>
 								<td>{{ $usu->direcciones_id}}</td>
-								<td>{{ $usu->clientes_id }}</td>
+								@foreach($comps as $comp)
+									@if($usu->clientes_id == $comp->id_usuario )
+									<td>{{ $comp->app }} {{ $comp->apm }} {{ $comp->nombre }}</td>
+									@endif
+								 @endforeach
 								<td><h3><a href="{{ route('modificarVentas', ['id' => $usu->id_venta]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3></td>
 								<td><h3><a href="{{ route('borrarVenta', ['id' => $usu->id_venta]) }}"><i class="fas fa-trash-alt"></i> Eliminar</a></h3></td>
 							</tr>
