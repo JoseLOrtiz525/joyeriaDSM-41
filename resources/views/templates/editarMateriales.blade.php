@@ -25,29 +25,24 @@
 
 			@include ('layouts.header')
 
-			<h2>Editar Ventas</h2>
+			<h2>Editar Materiales</h2>
 
 
-				<form action="{{ route('salvarVentas', ['id' => $usu->id_venta]) }}" method="POST" name="nuevo3" enctype="multipart/form-data">
+				<form action="{{ route('salvarMateriales', ['id' => $usu->id_material]) }}" method="POST" name="nuevo3" enctype="multipart/form-data">
 
 					{{ csrf_field() }}
 					{{ method_field('PUT') }} 
 
 					<div style="padding: 1%;">
-						Monto total : <input type="number" name="monto_total" value="{{ $usu->monto_total }}">
+						Nombre del material : <input type="text" name="nombre" value="{{ $usu->nombre }}">
 					</div>
-					@if($errors->first('monto_total')) <i>{{$errors -> first ('monto_total')}}</i>@endif
+					@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif
 
 					<div style="padding: 1%;">
-						Id de la direccion vinculada : <input type="number" name="direcciones_id" value="{{ $usu->direcciones_id }}">
+						Tipo de material : <input type="text" name="tipo_material" value="{{ $usu->tipo_material }}">
 					</div>
-					@if($errors->first('direcciones_id')) <i>{{$errors -> first ('direcciones_id')}}</i>@endif
+					@if($errors->first('tipo_material')) <i>{{$errors -> first ('tipo_material')}}</i>@endif
 					
-
-					<div style="padding: 1%;">
-						Cliente que realizo la compra : <input type="number" name="clientes_id" value="{{ $usu->clientes_id }}"><br>
-					</div>
-					@if($errors->first('clientes_id')) <i>{{$errors -> first ('clientes_id')}}</i>@endif
 					<hr>
 
 					<input type="submit" value="Enviar">

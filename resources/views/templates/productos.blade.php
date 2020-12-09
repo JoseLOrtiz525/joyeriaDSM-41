@@ -26,19 +26,21 @@
 			@include ('layouts.header')
 
 
-				<h2>Usuarios registrados</h2>
+				<h2>Productos registrados</h2>
 
 				<div>
 					<table>
 						<thead>
 							<tr>
 
-								<th>Nombre producto</th>
-								<th>Numero existencias</th>
-								<th>Precio</th>
-								<th>Descripcion</th>
-								<th>Medida</th>
-								<th>Precio de oferta</th>
+								<th><h3>Nombre producto</h3></th>
+								<th><h3>Numero existencias</h3></th>
+								<th><h3>Precio</h3></th>
+								<th><h3>Descripcion</h3></th>
+								<th><h3>Medida</h3></th>
+								<th><h3>Precio de oferta</h3></th>
+								<th><h3>Editar Registro</h3></th>
+								<th><h3>Eliminar Registro</h3></th>
 							</tr>
 						</thead>
 						@foreach($usus as $usu)
@@ -50,6 +52,9 @@
 								<td>{{ $usu->descripcion}}</td>
 								<td>{{ $usu->medida }}</td>
 								<td>{{ $usu->precio_oferta}}</td>
+								<td><h3><a href="{{ route('modificarProductos', ['id' => $usu->id_producto]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3></td>
+								<td><h3><a href="{{ route('borrarProducto', ['id' => $usu->id_producto]) }}"><i class="fas fa-trash-alt"></i> Eliminar</a></h3></td>
+							
 
 							</tr>
 						</tbody>

@@ -32,11 +32,13 @@
 	<table>
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>Matricula</th>
-				<th>Nombre</th>
-				<th>Genero</th>
-				<th>Email</th>
+				<th><h3>ID</h3></th>
+				<th><h3>Matricula</h3></th>
+				<th><h3>Nombre</h3></th>
+				<th><h3>Genero</h3></th>
+				<th><h3>Email</h3></th>
+				<th><h3>Editar Registro</h3></th>
+				<th><h3>Eliminar Registro</h3></th>
 			</tr>
 		</thead>
 		@foreach($usus as $usu)
@@ -51,6 +53,9 @@
 					Femenino
 					@endif</td>
 				<td>{{ $usu->email}}</td>
+				<td><h3><a href="{{ route('modificar', ['id' => $usu->id_usuario]) }}"><i class="fas fa-pen-square"></i> Editar perfil</a></h3></td>
+				<td><h3><a href="{{ route('borrar', ['id' => $usu->id_usuario]) }}"><i class="fas fa-trash-alt"></i> Eliminar usuario</a></h3></td>
+							
 			</tr>
 		</tbody>
 

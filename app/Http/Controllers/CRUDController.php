@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\UsuariosModel;
 use App\VentasModel;
+use App\MaterialesModel;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidarRequest;
 use App\Http\Requests\ValidarVentasRequest;
+use App\Http\Requests\ValidarMaterialesRequest;
 
 class CRUDController extends Controller
 {
     
     //--------------------------- Ventas  -----------------------------------------------
-    
+
         public function guardarVentas(ValidarVentasRequest $request){
     
             $usus = VentasModel::create($request->only('monto_total', 'direcciones_id', 'clientes_id'));
@@ -49,4 +51,40 @@ class CRUDController extends Controller
             $id->delete();
             return redirect()->route('ventas');
         }
+
+        //--------------------------- materiales -----------------------------------------------
+    
+        public function Materiales() {
+            $usus = MaterialesModel::all();
+            return  view("templates.materiales")
+            ->with(['usus' => $usus]);
+        }
+
+        public function registrarMateriales() {
+            return  view("templates.registrar_materiales");
+        }
+        
+        public function guardarMateriales(ValidarMaterialesRequest $request){
+    
+            $usus = MaterialesModel::create($request->only('nombre', 'tipo_material'));
+            return redirect()->route('registrarMateriales');
+        }
+        
+        public function modificarMateriales(MaterialesModel $id){
+            return view("templates.editarMateriales")
+                ->with(['usu' => $id]);
+        }
+        public function salvarMateriales(MaterialesModel $id, Request $request){
+
+                //  $id = AlumnosModel::find($id);
+                 $id->update($request->only('nombre', 'tipo_material'));
+
+                return redirect()->route('materiales');
+        }
+
+        public function borrarMaterial(MaterialesModel $id){
+            $id->delete();
+            return redirect()->route('materiales');
+        }
 }
+
