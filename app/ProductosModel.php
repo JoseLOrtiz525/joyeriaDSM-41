@@ -16,4 +16,10 @@ class ProductosModel extends Model
        'medida',
        'precio_oferta'
     ];
+
+    public function scopeBuscar($query, $buscar){
+        if(trim($buscar)!=""){
+            $query->where(\BD::raw('nombre_producto'),"LIKE", "%".$buscar."%");
+        }
+    }
 }

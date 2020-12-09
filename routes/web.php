@@ -35,7 +35,7 @@ Route::name('guardarProductos')->post('guardarProductos/', 'SistemController@gua
 
 Route::name('elements')->get('elements/', 'SistemController@elements');
 
-Route::name('productos')->get('productos/', 'SistemController@productos');
+Route::name('productos')->get('productos/{buscar?}', 'SistemController@productos');
 
 Route::name('catalogo')->get('catalogo/', 'SistemController@catalogo');
 

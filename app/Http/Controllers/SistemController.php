@@ -32,11 +32,14 @@ class SistemController extends Controller
         return  view("templates.iniciar_sesion");
     }
 
-    public function catalogo()
+    public function catalogo(Request $request, $buscar=null)
     {
-        $usus = ProductosModel::all();
+        $usus = ProductosModel::paginate(3);
+        $orders = ProductosModel::Buscar($request->get('buscar'))
+        ->orderBy('nombre');
         return  view("templates.catalogo")
-        ->with(['usus' => $usus]);
+        ->with(['usus' => $usus])
+        ->with(['orders' => $orders]);
     }
 
     public function usuarios()

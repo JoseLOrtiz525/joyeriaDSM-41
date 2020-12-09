@@ -15,6 +15,7 @@
 </head>
 
 <style>
+	
 	.card {
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		transition: 0.3s;
@@ -34,6 +35,9 @@
 	.container {
 		padding: 2px 16px;
 	}
+	.pag {
+		text-align: center;
+	 }
 </style>
 
 <body class="is-preload">
@@ -54,10 +58,28 @@
 					Paypal
 					</a>
 
+					<form name="buscar" action="{{ route('productos') }}" method ="get">
+					 {{ csrf_field() }}
+
+					 Buscar Anillos: 
+					 <a href="{{ route('productos',['buscar'=>'anillo']) }}">
+					 	<img>
+					 	<button>Anillos</button>
+					 </a>
+					 Buscar Pulseras: 
+					 <a href="{{ route('productos',['buscar'=>'pulsera']) }}">
+					 	<img>
+					 	<button>Pulseras</button>
+					 </a>
+					 </form>
+
 				<div>
 
 					@foreach($usus as $usu)
 
+					 
+
+					 
 
 					<table style="width:100%">
 						<tr>
@@ -150,7 +172,10 @@
 						{{ $usu->activo }} <br>
 					</div>
 				</div> -->
-
+			
+				<div class='pag'>
+				{{ $usus->links() }}
+				</div>				
 			</div>
 		</div>
 
@@ -161,5 +186,6 @@
 	@include ('layouts.footer')
 
 </body>
+
 
 </html>
