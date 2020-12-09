@@ -34,6 +34,11 @@
 	.container {
 		padding: 2px 16px;
 	}
+    .izquierda{
+	text-align: right;
+	}
+	
+
 </style>
 
 <body class="is-preload">
@@ -48,77 +53,72 @@
 				@include ('layouts.header')
 
 
-				<h2>Carrito</h2>
+				
 
 				<div>
+					<h2>Carrito de productos</h2>
+					<div class="izquierda">		
+				<a href="{{ route('catalogo')}}" class="button big">Regresar</a><br>
+</div>	
+				<table>
+						<thead>
+							<tr>
 
-					@foreach($usus as $usu)
+								<th>Nombre producto</th>
+								<th>Numero existencias</th>
+								<th>Precio</th>
+								<th>Descripcion</th>
+								<th>Medida</th>
+								<th>Precio de oferta</th>
+							</tr>
+						</thead>
+						<input type="hidden" name="total" value="{{$total=0}}">
+						<?php
+						
+						?>
+						@if($id == $usu->id_producto)
+						@foreach($usus as $usu)
+						
+						<tbody>
+							<tr>
+								<td>{{ $usu->nombre_producto}}</td>
+								<td>{{ $usu->no_existencias}}</td>
+								<td> <strike> {{ $usu->precio }}</strike></td>
+								<td>{{ $usu->descripcion}}</td>
+								<td>{{ $usu->medida }}</td>
+								<td>{{ $usu->precio_oferta}}</td>
 
-					
-					<table style="width:100%">
+							</tr>
+						</tbody>
+						<input type="hidden" name="total" value="{{$total=$total+ $usu->precio_oferta }}">
+
+						
+						
+						@endforeach
+						
+						@else
+
 						<tr>
-							<th>
-								<div class="card">
-									<img src="{{asset('images/joya1.jpg')}}" alt="Imagen">
-									<div class="container">
-										{{ $usu->nombre_producto}}
-										{{ $usu->no_existencias}}
-										{{ $usu->precio }}
-										{{ $usu->descripcion}}
-										{{ $usu->medida }}
-										{{ $usu->precio_oferta}}
-										<br></br>
-										<a href="{{route('addCarrito')}}" class="btn btn-primary btn-lg
-						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="{{route('detalleProducto')}}" class="btn btn-secondaty btn-lg
-						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
-									</div>
-								</div>
-							</th>
+						
+								<td colspan="5">HOLA</td>
 
-							<th>
-								<div class="card">
-									<img src="{{asset('images/joya2.jpg')}}" alt="Imagen">
-									<div class="container">
-										{{ $usu->nombre_producto}}
-										{{ $usu->no_existencias}}
-										{{ $usu->precio }}
-										{{ $usu->descripcion}}
-										{{ $usu->medida }}
-										{{ $usu->precio_oferta}}
-										<br></br>
-										<a href="{{route('addCarrito')}}" class="btn btn-primary btn-lg
-						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="" class="btn btn-secondaty btn-lg
-						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
-									</div>
-								</div>
-							</th>
+							</tr>
 
-							<th>
-								<div class="card">
-									<img src="{{asset('images/joya3.jpg')}}" alt="Imagen">
-									<div class="container">
-										{{ $usu->nombre_producto}}
-										{{ $usu->no_existencias}}
-										{{ $usu->precio }}
-										{{ $usu->descripcion}}
-										{{ $usu->medida }}
-										{{ $usu->precio_oferta}}
-										<br></br>
-										<a href="{{route('addCarrito')}}" class="btn btn-primary btn-lg
-						btn-block" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="" class="btn btn-secondaty btn-lg
-						btn-block" role="button" aria-pressed="true">Detalle</a><br></br>
-									</div>
-								</div>
-							</th>
+						@endif
+						
 
-						</tr>
-
+						<tfoot>
+						
+												<tr>
+												<td></td>
+												<td></td>
+													<td></td>
+													<td colspan="2">Total</td>
+													<td>${{$total}}</td>
+												</tr>
+											</tfoot>
 					</table>
-
-					@endforeach
+					
 
 
 				</div>
