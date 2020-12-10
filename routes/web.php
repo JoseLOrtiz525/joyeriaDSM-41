@@ -98,3 +98,4 @@ Route::get('/cart-checkout','CartController@cart')->name('cart.checkout');
 Route::post('/cart-clear',  'CartController@clear')->name('cart.clear');
 
 Route::post('/cart-removeitem',  'CartController@removeitem')->name('cart.removeitem');
+Route::name('reporte')->get('reporte/', 'SistemController@reporte');

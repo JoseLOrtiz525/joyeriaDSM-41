@@ -143,5 +143,10 @@ class SistemController extends Controller
         ->with(['usus' => $query]);
 
     }
-
+    public function reporte()
+    {
+        
+        return  view("templates.reporte_ventas");
+       
+}
 }
