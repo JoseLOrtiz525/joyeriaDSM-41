@@ -90,3 +90,5 @@ Route::name('detalleProducto')->get('detalleProducto/{id?}', 'SistemController@d
 Route::name('buscar')->get('buscar/', 'SistemController@buscar');
 
 Route::name('carrito')->get('carrito/', 'SistemController@carrito');
+
+Route::name('reporte')->get('reporte/', 'SistemController@reporte');
