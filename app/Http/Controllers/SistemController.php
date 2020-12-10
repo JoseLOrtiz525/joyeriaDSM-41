@@ -53,7 +53,7 @@ class SistemController extends Controller
     public function guardar(ValidarRequest $request){
 
     $usu = UsuariosModel::create($request->only('nombre', 'email', 'app' , 'apm' , 'pass', 'tel','matricula','fn'));
-    return redirect()->route('layouts.index');
+    return redirect()->route('home');
     }
 
     public function modificar(UsuariosModel $id){
