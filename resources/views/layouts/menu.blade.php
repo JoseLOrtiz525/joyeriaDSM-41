@@ -69,22 +69,19 @@
 										<li>
 											<span class="opener">Ventas</span>
 											<ul>
-												<li><a href="#">Registrarse</a></li>
-												<li><a href="#">Ver perfil</a></li>
-												<li><a href="#">Iniciar sesion</a></li>
-												
+												<li><a href="{{ route('registrarVentas')}}">Registrar Nueva Venta</a></li>
+												<li><a href="{{ route('ventas')}}">Ver Registro de Ventas</a></li>
 											</ul>
 										</li>
 										<li>
 											<span class="opener">Materiales</span>
 											<ul>
-												<li><a href="#">Registrarse</a></li>
-												<li><a href="#">Ver perfil</a></li>
-												<li><a href="#">Iniciar sesion</a></li>
-												
+												<li><a href="{{ route('registrarMateriales')}}">Registrar Material</a></li>
+												<li><a href="{{ route('materiales')}}">Ver Registro de Materiales</a></li>
 											</ul>
 										</li>
 										@endif
+										
 										
 									</ul>
 								</nav>
