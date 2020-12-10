@@ -17,7 +17,7 @@ class LoginController extends Controller
         
         $consulta = UsuariosModel::where('email', '=', $correo)->where('pass', '=', $pass)->get();
 
-        dd($consulta);
+        
 
         if (count($consulta) == 0) {
             
