@@ -9,6 +9,7 @@ class ProductosModel extends Model
     protected $table = 'tb_productos';
     protected $primaryKey = 'id_producto';
     protected $fillable = [
+       'img',
        'nombre_producto',
        'no_existencias',
        'precio',

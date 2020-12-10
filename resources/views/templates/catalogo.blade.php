@@ -86,10 +86,11 @@
 							</div>
 							<div class="card">
 								<div class="row  justify-content-center">
+									
 									@forelse($usus as $usu)
 									<div class="col-4 border p-5 mt-5 text-center">
-										<img src="{{asset('images/joya1.jpg')}}" alt="Imagen">
-										<!-- {{ asset('img/'.$usu->img) }} -->
+										<img src="{{ asset('img/'.$usu->img) }} " alt="Imagen" width="200" height="200">
+										
 										<div class="container">
 											{{ $usu->nombre_producto}}<br>
 											{{ $usu->no_existencias}}<br>
