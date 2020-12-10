@@ -51,63 +51,62 @@
 
 				@include ('layouts.header')
 
+				<h2>Carrito de productos</h2>
 				<div>
-					<h2>Carrito de productos</h2>
-					<div class="izquierda">
-						<a href="{{ route('catalogo')}}" class="button big">Regresar</a><br>
+					<div class="row">
+						<div>
+							@if (count(Cart::getContent()))
+							<table>
+								<thead>
+									<th>ID</th>
+									<th>NOMBRE</th>
+									<th>PRECIO</th>
+									<th>CANTIDAD</th>
+								</thead>
+								<tbody>
+									<input type="hidden" name="total" value="{{$total=0}}">
+									@foreach (Cart::getContent() as $item)
+									<tr>
+										<td>{{$item->id}}</td>
+										<td>{{$item->name}}</td>
+										<td>{{$item->price}}</td>
+										<td>{{$item->quantity}}</td>
+
+										<td>
+											<input type="hidden" name="total" value="{{$total=$total+ ($item->quantity * $item->price) }}">
+											<form action="{{route('cart.removeitem')}}" method="POST">
+												@csrf
+												<input type="hidden" name="id" value="{{$item->id}}">
+												<button type="submit" class="btn btn-link btn-sm text-danger">x</button>
+											</form>
+										</td>
+									</tr>
+									@endforeach
+
+									<tr>
+										<td></td>
+										<td></td>
+										<td>Costo Total: </td>
+										<td>${{$total}}</td>
+									</tr>
+								</tbody>
+							</table>
+
+
+
+							@else
+							<p>Carrito vacio</p>
+							<p>Regresa a Comprar!!</p>
+							</p>
+
+							@endif
+							<a href="{{ route('catalogo')}}">Catalogo</a><br></br>
+						</div>
+
 					</div>
-					<table>
-						<thead>
-							<tr>
-
-								<th>Nombre producto</th>
-								<th>Numero existencias</th>
-								<th>Precio</th>
-								<th>Descripcion</th>
-								<th>Medida</th>
-								<th>Precio de oferta</th>
-							</tr>
-						</thead>
-						<input type="hidden" name="total" value="{{$total=0}}">
-
-						<?php
-
-						?>
-
-						@foreach($usus as $usu)
-						@if($id == $usu->id_producto)
-						<tbody>
-							<tr>
-								<td>{{ $usu->nombre_producto}}</td>
-								<td>{{ $usu->no_existencias}}</td>
-								<td> <strike> {{ $usu->precio }}</strike></td>
-								<td>{{ $usu->descripcion}}</td>
-								<td>{{ $usu->medida }}</td>
-								<td>{{ $usu->precio_oferta}}</td>
-
-							</tr>
-						</tbody>
-						<input type="hidden" name="total" value="{{$total=$total+ $usu->precio_oferta }}">
-
-
-						@endif
-
-						@endforeach
-						<tfoot>
-
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td colspan="2">Total</td>
-								<td>${{$total}}</td>
-							</tr>
-						</tfoot>
-					</table>
-
-
-
 				</div>
+
+
 
 			</div>
 		</div>

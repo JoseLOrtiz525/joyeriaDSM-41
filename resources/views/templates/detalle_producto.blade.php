@@ -56,14 +56,18 @@
 					<div class="card">
 						<img src="{{asset('images/joya1.jpg')}}" alt="Imagen">
 						<div class="container">
-							Nombre del producto: {{ $usu->nombre_producto}}  <br>
+							Nombre del producto: {{ $usu->nombre_producto}} <br>
 							Numero de existencias actuales: {{ $usu->no_existencias}} <br>
 							Precio: {{ $usu->precio }} <br>
 							Descripcion: {{ $usu->descripcion}} <br>
 							Medida: {{ $usu->medida }} <br>
 							Precio de oferta: {{ $usu->precio_oferta}} <br>
 							<br></br>
-							<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+							<form action="{{route('cart.add')}}" method="post">
+								@csrf
+								<input type="hidden" name="producto_id" value="{{$usu->id_producto}}">
+								<input type="submit" name="btn" class="btn btn-success" value="AÑADIR AL CARRITO">
+							</form>
 							<a href="{{ route('catalogo')}}" class="button big">Regresar</a><br>
 
 						</div>

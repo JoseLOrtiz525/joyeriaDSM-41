@@ -35,7 +35,7 @@ class SistemController extends Controller
 
     public function catalogo(Request $request, $buscar=null)
     {
-        $usus = ProductosModel::paginate(3);
+        $usus = ProductosModel::paginate(9);
         $orders = ProductosModel::Buscar($request->get('buscar'))
         ->orderBy('nombre');
         return  view("templates.catalogo")
