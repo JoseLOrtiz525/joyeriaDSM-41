@@ -38,6 +38,10 @@
 	.izquierda {
 		text-align: right;
 	}
+
+	.derecha {
+		align-content: left;
+	}
 </style>
 
 <body class="is-preload">
@@ -52,8 +56,9 @@
 				@include ('layouts.header')
 
 				<h2>Carrito de productos</h2>
+				<a href="{{ route('catalogo')}}" class="button big">Catalogo</a><br></br>
 				<div>
-					<div class="row">
+					<div>
 						<div>
 							@if (count(Cart::getContent()))
 							<table>
@@ -81,6 +86,9 @@
 											</form>
 										</td>
 									</tr>
+									<div class="derecha">
+								<a href="{{ route('guardarVentas', ['id' => $item->id]) }}" class="button big">Comprar</a><br>
+							</div>
 									@endforeach
 
 									<tr>
@@ -88,19 +96,19 @@
 										<td></td>
 										<td>Costo Total: </td>
 										<td>${{$total}}</td>
+										<td></td>
 									</tr>
 								</tbody>
 							</table>
-
-
-
 							@else
 							<p>Carrito vacio</p>
 							<p>Regresa a Comprar!!</p>
-							</p>
-
 							@endif
-							<a href="{{ route('catalogo')}}">Catalogo</a><br></br>
+
+							<div class="derecha">
+								<a href="{{ route('guardarVentas', ['id' => Cart::getContent()]) }}" class="button big">Comprar</a><br>
+							</div>
+							
 						</div>
 
 					</div>

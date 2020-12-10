@@ -147,6 +147,7 @@ class SistemController extends Controller
     {
         
         return  view("templates.reporte_ventas");
-       
 }
+
+
 }

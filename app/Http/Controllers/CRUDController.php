@@ -15,8 +15,8 @@ class CRUDController extends Controller
     
     //--------------------------- Ventas  -----------------------------------------------
 
-        public function guardarVentas(ValidarVentasRequest $request){
-    
+        public function guardarVentas(Request $request){
+            dd($request);
             $usus = VentasModel::create($request->only('monto_total', 'direcciones_id', 'clientes_id'));
             return redirect()->route('registrarVentas');
         }

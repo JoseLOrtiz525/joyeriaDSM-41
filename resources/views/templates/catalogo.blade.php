@@ -64,11 +64,11 @@
 
 					<div class="container">
 
-						Precio Minimo:
+						<!-- Precio Minimo:
 						<input type="int" name="precioMin" value="{{ old('buscar')}}"><br>
 
 						Precio Maximo:
-						<input type="int" name="precioMax" value="{{ old('buscar')}}">
+						<input type="int" name="precioMax" value="{{ old('buscar')}}"> -->
 					</div>
 
 					<br>
