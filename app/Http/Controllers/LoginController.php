@@ -15,11 +15,9 @@ class LoginController extends Controller
         $correo = $request->input('email');
         $pass = $request->input('pass');
         
-        $consulta = UsuariosModel::where('email', '=', $correo)
-            ->where('pass', '=', $pass)
-            ->get();
+        $consulta = UsuariosModel::where('email', '=', $correo)->where('pass', '=', $pass)->get();
 
-        // dd(count($consulta));
+        dd($consulta);
 
         if (count($consulta) == 0) {
             
@@ -35,29 +33,6 @@ class LoginController extends Controller
             $session_name = $request->session()->get('session_name');
             $session_tipo = $request->session()->get('session_tipo');
 
-            
-
-            // if ($session_tipo == 1) {
-            //     return view('admin');
-            // } else {
-            //     if ($session_tipo == 2) {
-            //         return view('rector');
-            //     } else {
-            //         if ($session_tipo == 3) {
-            //             return view('directivos');
-            //         } else {
-            //             if ($session_tipo == 4) {
-            //                 return view('profesor');
-            //             } else {
-
-            //                 if ($session_tipo == 5) {
-            //                     return view('alumno');
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
-
 
             switch ($session_tipo) {
                 case 1:
@@ -67,25 +42,6 @@ class LoginController extends Controller
                     
                     break;
 
-                // case 2:
-                //     // return view('rector');
-                //     return 'rector';
-                //     break;
-
-                // case 3:
-                //     // return view('directivos');
-                //     return 'directivos';
-                //     break;
-
-                // case 4:
-                //     // return view('profesor');
-                //     return 'profesor';
-                //     break;
-
-                // case 5:
-                //     // return view('alumno');
-                //     return 'alumno';
-                //     break;
             }
             
         }

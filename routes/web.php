@@ -86,3 +86,7 @@ Route::name('borrarMaterial')->get('borrarMaterial/{id}', 'CRUDController@borrar
 Route::name('addCarrito')->get('addCarrito/{id?}', 'SistemController@addCarrito');
 
 Route::name('detalleProducto')->get('detalleProducto/{id?}', 'SistemController@detalleProducto');
+
+Route::name('buscar')->get('buscar/', 'SistemController@buscar');
+
+Route::name('carrito')->get('carrito/', 'SistemController@carrito');

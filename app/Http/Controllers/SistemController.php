@@ -7,6 +7,7 @@ use App\ProductosModel;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidarRequest;
 use App\Http\Requests\ValidarProductosRequest;
+use Illuminate\Support\Facades\DB;
 
 class SistemController extends Controller
 {
@@ -52,7 +53,7 @@ class SistemController extends Controller
     public function guardar(ValidarRequest $request){
 
     $usu = UsuariosModel::create($request->only('nombre', 'email', 'app' , 'apm' , 'pass', 'tel','matricula','fn'));
-    return redirect()->route('registrarse');
+    return redirect()->route('layouts.index');
     }
 
     public function modificar(UsuariosModel $id){
@@ -111,7 +112,9 @@ class SistemController extends Controller
 
     public function carrito()
     {
-        return view('templates.carrito');
+        $usus = ProductosModel::all();
+        return view('templates.carrito')
+        ->with(['usus' => $usus]);
     }
 
     public function addCarrito($id=null)
@@ -128,6 +131,17 @@ class SistemController extends Controller
         return view('templates.detalle_producto')
         ->with('id', $id)
         ->with(['usu' => $usus]);
+    }
+
+    public function buscar(Request $request)
+    {
+       
+        
+        $query = ProductosModel::Buscar($request->get('buscar'))->paginate(3);
+        // dd($query);
+        return view("templates.catalogo")
+        ->with(['usus' => $query]);
+
     }
 
 }

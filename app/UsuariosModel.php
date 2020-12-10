@@ -20,4 +20,7 @@ class UsuariosModel extends Model
        'tipo_usuario',
        'id_usuario'
     ];
+
+    
+
 }

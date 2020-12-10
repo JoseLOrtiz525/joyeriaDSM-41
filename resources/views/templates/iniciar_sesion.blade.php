@@ -42,7 +42,8 @@
 					<div>
 						Email : <input type="text" name="email"><br>
 					</div>
-					@if($errors->first('nombre')) <i>{{$errors -> first ('email')}}</i>@endif
+					
+					@if($errors->first('email')) <i>{{$errors -> first ('email')}}</i>@endif
 
 					<div>
 						Password : <input type="text" name="pass"><br>

@@ -15,7 +15,6 @@
 </head>
 
 <style>
-	
 	.card {
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 		transition: 0.3s;
@@ -35,9 +34,10 @@
 	.container {
 		padding: 2px 16px;
 	}
+
 	.pag {
 		text-align: center;
-	 }
+	}
 </style>
 
 <body class="is-preload">
@@ -55,107 +55,111 @@
 				<h2>Catalogo de productos</h2>
 				<l1 class="mr-1">
 					<a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">
-					Paypal
+						Paypal
 					</a>
 
-					<form name="buscar" action="{{ route('productos') }}" method ="get">
-					 {{ csrf_field() }}
 
-					 Buscar Anillos: 
-					 <a href="{{ route('productos',['buscar'=>'anillo']) }}">
-					 	<img>
-					 	<button>Anillos</button>
-					 </a>
-					 Buscar Pulseras: 
-					 <a href="{{ route('productos',['buscar'=>'pulsera']) }}">
-					 	<img>
-					 	<button>Pulseras</button>
-					 </a>
-					 </form>
+					<form action="{{ route('buscar')}}" method="GET" name="buscar">
+						{{ csrf_field() }}
+<div class="container">
+						Buscar: <input type="text" name="buscar" value="{{ old('buscar')}}" placeholder="Buscar por nombre: Juan">
+	</div>	
 
-				<div>
+<div class="container">
 
-					@foreach($usus as $usu)
+						Precio Minimo:
+						<input type="int" name="precioMin" value="{{ old('buscar')}}"><br>
 
-					 
+						Precio Maximo:
+						<input type="int" name="precioMax" value="{{ old('buscar')}}">
+</div>
 
-					 
+						<br>
+						<input type="submit" value="Buscar">
 
-					<table style="width:100%">
-						<tr>
-							<th>
-								<div class="card">
-									<img src="{{asset('images/joya1.jpg')}}" alt="Imagen">
-									<!-- {{ asset('img/'.$usu->img) }} -->
-									<div class="container">
-										{{ $usu->nombre_producto}}
-										{{ $usu->no_existencias}}
-										{{ $usu->precio }}
-										{{ $usu->descripcion}}
-										{{ $usu->medida }}
-										{{ $usu->precio_oferta}}
-										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+
+					</form>
+
+					<div>
+
+						@foreach($usus as $usu)
+
+
+						<table>
+							<tr>
+								<th>
+									<div class="card">
+										<img src="{{asset('images/joya1.jpg')}}" alt="Imagen">
+										<!-- {{ asset('img/'.$usu->img) }} -->
+										<div class="container">
+											{{ $usu->nombre_producto}}
+											{{ $usu->no_existencias}}
+											{{ $usu->precio }}
+											{{ $usu->descripcion}}
+											{{ $usu->medida }}
+											{{ $usu->precio_oferta}}
+											<br></br>
+											<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+											<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+										</div>
 									</div>
-								</div>
-							</th>
+								</th>
 
-							<th>
-								<div class="card">
-									<img src="{{asset('images/joya2.jpg')}}" alt="Imagen">
-									<!-- {{ asset('img/'.$usu->img) }} -->
-									<div class="container">
-										{{ $usu->nombre_producto}}
-										{{ $usu->no_existencias}}
-										{{ $usu->precio }}
-										{{ $usu->descripcion}}
-										{{ $usu->medida }}
-										{{ $usu->precio_oferta}}
-										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+								<th>
+									<div class="card">
+										<img src="{{asset('images/joya2.jpg')}}" alt="Imagen">
+										<!-- {{ asset('img/'.$usu->img) }} -->
+										<div class="container">
+											{{ $usu->nombre_producto}}
+											{{ $usu->no_existencias}}
+											{{ $usu->precio }}
+											{{ $usu->descripcion}}
+											{{ $usu->medida }}
+											{{ $usu->precio_oferta}}
+											<br></br>
+											<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+											<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+										</div>
 									</div>
-								</div>
-							</th>
+								</th>
 
-							<th>
-								<div class="card">
-									<img src="{{asset('images/joya3.jpg')}}" alt="Imagen">
-									<!-- {{ asset('img/'.$usu->img) }} -->
-									<div class="container">
-										{{ $usu->nombre_producto}}
-										{{ $usu->no_existencias}}
-										{{ $usu->precio }}
-										{{ $usu->descripcion}}
-										{{ $usu->medida }}
-										{{ $usu->precio_oferta}}
-										<br></br>
-										<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
-										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+								<th>
+									<div class="card">
+										<img src="{{asset('images/joya3.jpg')}}" alt="Imagen">
+										<!-- {{ asset('img/'.$usu->img) }} -->
+										<div class="container">
+											{{ $usu->nombre_producto}}
+											{{ $usu->no_existencias}}
+											{{ $usu->precio }}
+											{{ $usu->descripcion}}
+											{{ $usu->medida }}
+											{{ $usu->precio_oferta}}
+											<br></br>
+											<a href="{{ route('addCarrito', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Agregar al carrito</a><br></br>
+											<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+										</div>
 									</div>
-								</div>
-							</th>
+								</th>
 
-						</tr>
+							</tr>
 
-					</table>
+						</table>
 
-					@endforeach
+						@endforeach
 
 
-					<!-- <tfoot>
+						<!-- <tfoot>
 												<tr>
 													<td colspan="2"></td>
 													<td>100.00</td>
 												</tr>
 											</tfoot> -->
 
-				</div>
+					</div>
 
 
 
-				<!-- <div id="">
+					<!-- <div id="">
 					<div class=""></div>
 					<h1>
 						
@@ -172,10 +176,10 @@
 						{{ $usu->activo }} <br>
 					</div>
 				</div> -->
-			
-				<div class='pag'>
-				{{ $usus->links() }}
-				</div>				
+
+					<div class='pag'>
+						{{ $usus->links() }}
+					</div>
 			</div>
 		</div>
 

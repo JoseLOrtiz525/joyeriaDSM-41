@@ -31,7 +31,7 @@
 					{{ csrf_field() }}
 
 					Fecha de nacimiento : <input type="date" name="fn">
-					@if($errors->first('matricula')) <i>{{$errors -> first ('fn')}}</i>@endif
+					@if($errors->first('fn')) <i>{{$errors -> first ('fn')}}</i>@endif
 
 					<div>
 						Matricula : <input type="text" name="matricula" value="{{ old('matricula')}}">
@@ -43,26 +43,26 @@
 					@if($errors->first('nombre')) <i>{{$errors -> first ('nombre')}}</i>@endif
 
 					<div>
-						Email : <input type="text" name="email"><br>
+						Email : <input type="text" name="email" value="{{ old('email')}}"><br>
 					</div>
-					@if($errors->first('nombre')) <i>{{$errors -> first ('email')}}</i>@endif
+					@if($errors->first('email')) <i>{{$errors -> first ('email')}}</i>@endif
 
 					<div>
 						Apellido Paterno : <input type="text" name="app" value="{{ old('app')}}"><br>
 					</div>
-					@if($errors->first('nombre')) <i>{{$errors -> first ('app')}}</i>@endif
+					@if($errors->first('app')) <i>{{$errors -> first ('app')}}</i>@endif
 
 					<div>
-						Apellido Materno : <input type="text" name="apm"><br>
+						Apellido Materno : <input type="text" name="apm" value="{{ old('apm')}}"><br>
 					</div>
-					@if($errors->first('nombre')) <i>{{$errors -> first ('apm')}}</i>@endif
+					@if($errors->first('apm')) <i>{{$errors -> first ('apm')}}</i>@endif
 					<div>
-						Password : <input type="text" name="pass"><br>
+						Password : <input type="text" name="pass" value="{{ old('pass')}}"><br>
 					</div>
-					@if($errors->first('nombre')) <i>{{$errors -> first ('pass')}}</i>@endif
+					@if($errors->first('pass')) <i>{{$errors -> first ('pass')}}</i>@endif
 					<div>
-						Telefono : <input type="text" name="tel"><br>
-						@if($errors->first('nombre')) <i>{{$errors -> first ('tel')}}</i>@endif
+						Telefono : <input type="text" name="tel" value="{{ old('tel')}}"><br>
+						@if($errors->first('tel')) <i>{{$errors -> first ('tel')}}</i>@endif
 					</div>
 
 					<hr>

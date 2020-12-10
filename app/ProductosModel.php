@@ -17,9 +17,11 @@ class ProductosModel extends Model
        'precio_oferta'
     ];
 
-    public function scopeBuscar($query, $buscar){
-        if(trim($buscar)!=""){
-            $query->where(\BD::raw('nombre_producto'),"LIKE", "%".$buscar."%");
+    public function scopeBuscar($query,$buscar){
+        if (trim($buscar != "")) {
+            $query->where(\DB::raw("nombre_producto"), "LIKE", "%".$buscar."%");
         }
-    }
+        }
+
+
 }

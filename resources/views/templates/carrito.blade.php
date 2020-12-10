@@ -34,11 +34,10 @@
 	.container {
 		padding: 2px 16px;
 	}
-    .izquierda{
-	text-align: right;
-	}
-	
 
+	.izquierda {
+		text-align: right;
+	}
 </style>
 
 <body class="is-preload">
@@ -52,15 +51,12 @@
 
 				@include ('layouts.header')
 
-
-				
-
 				<div>
 					<h2>Carrito de productos</h2>
-					<div class="izquierda">		
-				<a href="{{ route('catalogo')}}" class="button big">Regresar</a><br>
-</div>	
-				<table>
+					<div class="izquierda">
+						<a href="{{ route('catalogo')}}" class="button big">Regresar</a><br>
+					</div>
+					<table>
 						<thead>
 							<tr>
 
@@ -73,12 +69,13 @@
 							</tr>
 						</thead>
 						<input type="hidden" name="total" value="{{$total=0}}">
+
 						<?php
-						
+
 						?>
-						@if($id == $usu->id_producto)
+
 						@foreach($usus as $usu)
-						
+						@if($id == $usu->id_producto)
 						<tbody>
 							<tr>
 								<td>{{ $usu->nombre_producto}}</td>
@@ -92,33 +89,22 @@
 						</tbody>
 						<input type="hidden" name="total" value="{{$total=$total+ $usu->precio_oferta }}">
 
-						
-						
-						@endforeach
-						
-						@else
-
-						<tr>
-						
-								<td colspan="5">HOLA</td>
-
-							</tr>
 
 						@endif
-						
 
+						@endforeach
 						<tfoot>
-						
-												<tr>
-												<td></td>
-												<td></td>
-													<td></td>
-													<td colspan="2">Total</td>
-													<td>${{$total}}</td>
-												</tr>
-											</tfoot>
+
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="2">Total</td>
+								<td>${{$total}}</td>
+							</tr>
+						</tfoot>
 					</table>
-					
+
 
 
 				</div>

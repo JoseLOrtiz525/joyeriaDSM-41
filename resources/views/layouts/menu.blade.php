@@ -35,6 +35,15 @@
 										<li><a href="{{ route('home')}}">Pagina de Inicio</a></li>
 										<li><a href="{{ route('catalogo')}}">Catalogo de productos</a></li>
 										<li>
+											<span class="opener">Sesion/Cliente</span>
+											<ul>
+												<li><a href="{{ route('registrarse')}}">Registrarse</a></li>
+												<li><a href="#">Ver perfil</a></li>
+												<li><a href="{{ route('iniciar_sesion')}}">Iniciar sesion</a></li>
+											</ul>
+										</li>
+										@if(session('session_tipo') != null)
+										<li>
 											<span class="opener">Tablas (Cambiar Nombre)</span>
 											<ul>
 												<li><a href="#">Registrarse</a></li>
@@ -46,14 +55,9 @@
 												<li><a href="#">Iniciar sesion</a></li>
 											</ul>
 										</li>
-										<li>
-											<span class="opener">Sesion/Cliente</span>
-											<ul>
-												<li><a href="{{ route('registrarse')}}">Registrarse</a></li>
-												<li><a href="#">Ver perfil</a></li>
-												<li><a href="{{ route('iniciar_sesion')}}">Iniciar sesion</a></li>
-											</ul>
-										</li>
+
+										
+
 										<li>
 											<span class="opener">Productos</span>
 											<ul>
@@ -80,7 +84,7 @@
 												
 											</ul>
 										</li>
-										
+										@endif
 										
 									</ul>
 								</nav>
