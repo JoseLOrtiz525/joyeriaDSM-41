@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\MapasModel;
+use Mapper;
+use Cornford\Googlmapper\MapperServiceProvider;
 
 class SistemController extends Controller
 {
@@ -189,11 +192,18 @@ class SistemController extends Controller
         
         return  view("templates.reporte_ventas");
 }
-public function detalleUsuario()
-{
-    $usus = UsuariosModel::all();
-    return view('templates.detalle_usuario')
-     ->with(['usus' => $usus]);
-}
+    public function detalleUsuario()
+    {
+        $usus = UsuariosModel::all();
+        return view('templates.detalle_usuario')
+        ->with(['usus' => $usus]);
+    }
+
+    public function mapa(){
+        Mapper::map(19.283295, -99.660684);
+        return view('templates.mapa');
+    }
+
+
 
 }

@@ -119,6 +119,6 @@ Route::name('guardarVentas')->get('guardarVentas/{id?}', 'CrudController@guardar
 Route::name('detalleUsuario')->get('detalleUsuario/', 'SistemController@detalleUsuario');
 
 
-
-
+//--------------------------------- Mapas google------------------------------------------
+Route::name('mapa')->get('mapa/', 'SistemController@mapa');
 
