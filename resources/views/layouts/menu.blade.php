@@ -40,6 +40,8 @@
 												<li><a href="{{ route('registrarse')}}">Registrarse</a></li>
 												<li><a href="{{ route('detalleUsuario')}}">Ver perfil</a></li>
 												<li><a href="{{ route('iniciar_sesion')}}">Iniciar sesion</a></li>
+												<li><a href="{{ route('reporte')}}">Reporte de Ventas</a></li>
+
 											</ul>
 										</li>
 										@if(session('session_tipo') != null)
