@@ -38,7 +38,7 @@
 											<span class="opener">Sesion/Cliente</span>
 											<ul>
 												<li><a href="{{ route('registrarse')}}">Registrarse</a></li>
-												<li><a href="#">Ver perfil</a></li>
+												<li><a href="{{ route('detalleUsuario')}}">Ver perfil</a></li>
 												<li><a href="{{ route('iniciar_sesion')}}">Iniciar sesion</a></li>
 											</ul>
 										</li>

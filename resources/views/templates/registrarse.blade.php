@@ -26,7 +26,7 @@
 			@include ('layouts.header')
 
 
-				<form action="{{ route ('guardar')}}" method="POST" name="nuevo">
+				<form action="{{ route ('guardar')}}" method="POST" name="nuevo" enctype="multipart/form-data">
 
 					{{ csrf_field() }}
 
@@ -64,12 +64,8 @@
 						Telefono : <input type="text" name="tel" value="{{ old('tel')}}"><br>
 						@if($errors->first('tel')) <i>{{$errors -> first ('tel')}}</i>@endif
 					</div>
-
+					Imagen : <input type="file" name="img"><br>
 					<hr>
-					<!--*Genero : <input type="text" name="gen"><br>
-Imagen : <input type="text" name="img"><br>
-Grupo : <input type="text" name="grupo"><br>
-*Activo : <input type="text" name="activo"><br> -->
 
 					<input type="submit" value="Enviar">
 				</form>

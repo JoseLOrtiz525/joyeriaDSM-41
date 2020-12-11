@@ -114,7 +114,9 @@ Route::name('reporte')->get('reporte/', 'SistemController@reporte');
 
 //------------------------------------------ MIO --------------------------------------------------------------
 
-Route::name('guardarVentas')->get('guardarVentas/{id}', 'CrudController@guardarVentas');
+Route::name('guardarVentas')->get('guardarVentas/{id?}', 'CrudController@guardarVentas');
+
+Route::name('detalleUsuario')->get('detalleUsuario/', 'SistemController@detalleUsuario');
 
 
 

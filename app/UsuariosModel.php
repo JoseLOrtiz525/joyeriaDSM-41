@@ -18,7 +18,8 @@ class UsuariosModel extends Model
        'matricula',
        'fn',
        'tipo_usuario',
-       'id_usuario'
+       'id_usuario',
+       'img'
     ];
 
     

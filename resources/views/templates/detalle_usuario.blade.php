@@ -48,32 +48,28 @@
 				@include ('layouts.header')
 
 
-				<h2>Detalle Producto</h2>
+				<h2>Perfil</h2>
 
 				<div>
-
+				@foreach($usus as $usu)
+				@if($usu->id_usuario == session('session_id'))
 
 					<div class="card">
 						<img src="{{ asset('img/'.$usu->img) }}" alt="Imagen" width="200" height="200">
 						<div class="container">
-							Nombre del producto: {{ $usu->nombre_producto}} <br>
-							Numero de existencias actuales: {{ $usu->no_existencias}} <br>
-							Precio: {{ $usu->precio }} <br>
-							Descripcion: {{ $usu->descripcion}} <br>
-							Medida: {{ $usu->medida }} <br>
-							Precio de oferta: {{ $usu->precio_oferta}} <br>
+							Nombre : {{ $usu->nombre}} {{ $usu->app}} {{ $usu->apm}} <br>
+							Matricula {{ $usu->matricula}} <br>
+							Fecha de nacimiento: {{ $usu->fn }} <br>
+							Telefono: {{ $usu->tel}} <br>
+							Email: {{ $usu->email }} <br>
 							<br></br>
-							<form action="{{route('cart.add')}}" method="post">
-								@csrf
-								<input type="hidden" name="producto_id" value="{{$usu->id_producto}}">
-								<input type="submit" name="btn" class="btn btn-success" value="AÑADIR AL CARRITO">
-							</form>
-							<a href="{{ route('catalogo')}}" class="button big">Regresar</a><br>
+							<a href="{{ route('home')}}" class="button big">Regresar al Inicio</a><br>
 
 						</div>
 					</div>
+					@endif
 
-
+@endforeach
 
 
 				</div>

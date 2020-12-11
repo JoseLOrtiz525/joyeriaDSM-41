@@ -24,6 +24,7 @@ class ValidarProductosRequest extends FormRequest
         public function rules()
         {
             return [
+            'img'=>'required',
             'nombre_producto'=>'required|min:2|max:30',
             'no_existencias' => 'required',
             'precio' => 'required',

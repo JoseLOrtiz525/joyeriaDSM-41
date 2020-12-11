@@ -24,6 +24,7 @@ class ValidarRequest extends FormRequest
         public function rules()
         {
             return [
+                
             'nombre'=>'required|min:2|max:10',
             'email' => 'required|min:3|max:30',
             'app' => 'required',
@@ -31,7 +32,9 @@ class ValidarRequest extends FormRequest
             'pass' => 'required',
             'tel' => 'required',
             'matricula'=> 'required',
-            'fn'=> 'required'
+            'fn'=> 'required',
+            'img'=>'required'
+
             ];
         }
 }

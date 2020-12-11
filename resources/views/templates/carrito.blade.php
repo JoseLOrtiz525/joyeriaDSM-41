@@ -65,8 +65,10 @@
 								<thead>
 									<th>ID</th>
 									<th>NOMBRE</th>
-									<th>PRECIO</th>
 									<th>CANTIDAD</th>
+									<th>PRECIO</th>
+									<th>ELIMINAR</th>
+									
 								</thead>
 								<tbody>
 									<input type="hidden" name="total" value="{{$total=0}}">
@@ -74,8 +76,9 @@
 									<tr>
 										<td>{{$item->id}}</td>
 										<td>{{$item->name}}</td>
-										<td>{{$item->price}}</td>
 										<td>{{$item->quantity}}</td>
+										<td>{{$item->price}}</td>
+										
 
 										<td>
 											<input type="hidden" name="total" value="{{$total=$total+ ($item->quantity * $item->price) }}">
@@ -86,9 +89,7 @@
 											</form>
 										</td>
 									</tr>
-									<div class="derecha">
-								<a href="{{ route('guardarVentas', ['id' => $item->id]) }}" class="button big">Comprar</a><br>
-							</div>
+									
 									@endforeach
 
 									<tr>
@@ -106,7 +107,7 @@
 							@endif
 
 							<div class="derecha">
-								<a href="{{ route('guardarVentas', ['id' => Cart::getContent()]) }}" class="button big">Comprar</a><br>
+								<a href="" class="button big">Comprar</a><br>
 							</div>
 							
 						</div>

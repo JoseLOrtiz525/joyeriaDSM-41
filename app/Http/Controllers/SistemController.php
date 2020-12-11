@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\UsuariosModel;
 use App\ProductosModel;
-use Illuminate\Http\Request;
 use App\Http\Requests\ValidarRequest;
 use App\Http\Requests\ValidarProductosRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class SistemController extends Controller
 {
@@ -51,10 +53,30 @@ class SistemController extends Controller
         ->with(['usus' => $usus]);
     }
 
-    public function guardar(ValidarRequest $request){
+    public function guardar(Request $request){
 
-    $usu = UsuariosModel::create($request->only('nombre', 'email', 'app' , 'apm' , 'pass', 'tel','matricula','fn'));
-    return redirect()->route('home');
+         
+        $file = $request ->file('img');
+        $img = $file -> getClientOriginalName();
+        // $img = $request -> file('img')->getClientOriginalName();
+    
+        \Storage::disk('local')->put($img, \File::get($file));
+    
+         $usu = UsuariosModel::create(array(
+            'img' => $img,
+            'nombre'     =>$request->input('nombre'),
+            'email'      =>$request->input('email'),
+            'app'        =>$request->input('app'),
+            'apm'        =>$request->input('apm'),
+            'pass'       =>$request->input('pass'),
+            'tel'        =>$request->input('tel'),
+            'matricula'  =>$request->input('matricula'),
+            'fn'         =>$request->input('fn')
+            
+         ));
+    
+        return redirect()->route('iniciar_sesion');
+
     }
 
     public function modificar(UsuariosModel $id){
@@ -75,10 +97,29 @@ class SistemController extends Controller
 
 
 
-    public function guardarProductos(ValidarProductosRequest $request2){
+    public function guardarProductos(Request $request){
 
-        $usu = ProductosModel::create($request2->only('nombre_producto','no_existencias', 'precio','descripcion','medida','precio_oferta'));
-        return redirect()->route('registrarProductos');
+        
+        $file = $request->file('img');
+        
+        $img = $file->getClientOriginalName();
+        // $img = $request -> file('img')->getClientOriginalName();
+    
+        \Storage::disk('local')->put($img, \File::get($file));
+    
+         $usu = ProductosModel::create(array(
+            'img' => $img,
+            'nombre_producto'=>$request->input('nombre_producto'),
+            'no_existencias' =>$request->input('no_existencias'),
+            'precio' =>        $request->input('precio'),
+            'descripcion' =>   $request->input('descripcion'),
+            'medida' =>        $request->input('medida'),
+            'precio_oferta' => $request->input('precio_oferta')
+            
+         ));
+    
+        return redirect()->route('productos');
+
         }
 
     public function registrarProductos()
@@ -136,7 +177,6 @@ class SistemController extends Controller
 
     public function buscar(Request $request)
     {
-       
         
         $query = ProductosModel::Buscar($request->get('buscar'))->paginate(3);
         // dd($query);
@@ -149,6 +189,11 @@ class SistemController extends Controller
         
         return  view("templates.reporte_ventas");
 }
-
+public function detalleUsuario()
+{
+    $usus = UsuariosModel::all();
+    return view('templates.detalle_usuario')
+     ->with(['usus' => $usus]);
+}
 
 }

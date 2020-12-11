@@ -26,7 +26,7 @@
 			@include ('layouts.header')
 
 
-				<form action="{{ route ('guardarProductos')}}" method="POST" name="nuevo">
+				<form action="{{ route ('guardarProductos')}}" method="POST" name="nuevo" enctype="multipart/form-data">
 
 					{{ csrf_field() }}
 
@@ -62,10 +62,11 @@
 					</div>
 					@if($errors->first('precio_oferta')) <i>{{$errors -> first ('precio_oferta')}}</i>@endif
 					
+					Imagen : <input type="file" name="img"><br>
 
 					<hr>
 					<!--*Genero : <input type="text" name="gen"><br>
-Imagen : <input type="text" name="img"><br>
+
 Grupo : <input type="text" name="grupo"><br>
 *Activo : <input type="text" name="activo"><br> -->
 

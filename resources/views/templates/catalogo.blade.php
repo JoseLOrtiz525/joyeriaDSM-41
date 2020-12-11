@@ -98,12 +98,15 @@
 											{{ $usu->medida }}<br>
 											<P>$ {{ $usu->precio_oferta}}</P>
 										</div>
+										
 										<a href="{{ route('detalleProducto', ['id' => $usu->id_producto]) }}" class="button big" role="button" aria-pressed="true">Detalle</a><br></br>
+
 										<form action="{{route('cart.add')}}" method="post">
 											@csrf
 											<input type="hidden" name="producto_id" value="{{$usu->id_producto}}">
 											<input type="submit" name="btn" class="btn btn-success" value="ADD TO CART">
 										</form>
+
 									</div>
 									@empty
 
