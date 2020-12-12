@@ -124,4 +124,6 @@ Route::name('registrarDireccion')->get('registrarDireccion/{id?}/{cantidad?}', '
 Route::name('direcciones')->get('direcciones/', 'CrudController@direcciones');
 
 
+//--------------------------------- Mapas google------------------------------------------
+Route::name('mapa')->get('mapa/', 'SistemController@mapa');
 

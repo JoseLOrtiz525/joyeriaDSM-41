@@ -87,7 +87,22 @@
 				<!-- Section -->
 				<!-- s -->
 
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Encuentranos en:</h1>
+						</header>
+						<p><h4>Si desea acudir a nuestro establecimiento para comprar o recibir tus productos, puede consultar la dirección en el siguiente enlace, por el bien de todos mantengamos las medidas de prevención de contagio, esperamos su visita.</h4> </p>
+						<ul class="actions">
+							<li><a href="{{ route('mapa') }}" class="button big"><i class="fas fa-map-marked"></i>  Aquí</a></li>
+						</ul>
+					</div>
+					
+				</section>
+
+
 			</div>
+			
 		</div>
 
 		@include ('layouts.menu')
