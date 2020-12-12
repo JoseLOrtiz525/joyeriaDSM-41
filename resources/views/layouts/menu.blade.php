@@ -40,11 +40,11 @@
 												<li><a href="{{ route('registrarse')}}">Registrarse</a></li>
 												<li><a href="{{ route('detalleUsuario')}}">Ver perfil</a></li>
 												<li><a href="{{ route('iniciar_sesion')}}">Iniciar sesion</a></li>
-												<li><a href="{{ route('reporte')}}">Reporte de Ventas</a></li>
+												
 
 											</ul>
 										</li>
-										@if(session('session_tipo') != null)
+										@if(session('session_tipo') == 1)
 										
 										<li>
 											<span class="opener">Productos</span>
@@ -59,6 +59,15 @@
 											<ul>
 												<!-- <li><a href="{{ route('registrarVentas')}}">Registrar Nueva Venta</a></li> -->
 												<li><a href="{{ route('ventas')}}">Ver Registro de Ventas</a></li>
+												<li><a href="{{ route('reporte')}}">Reporte de Ventas</a></li>
+											</ul>
+										</li>
+										<li>
+											<span class="opener">Direcciones</span>
+											<ul>
+												<li><a href="{{ route('registrarDireccion')}}">Registrar Nueva Direccion</a></li>
+												<li><a href="{{ route('direcciones')}}">Ver Registro de direcciones</a></li>
+												
 											</ul>
 										</li>
 										<li>

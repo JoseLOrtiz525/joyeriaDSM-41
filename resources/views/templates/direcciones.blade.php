@@ -26,7 +26,7 @@
 				@include ('layouts.header')
 
 
-				<h2>Ventas registradas</h2>
+				<h2>Direcciones registradas</h2>
 
 				<div>
 					<table>
@@ -34,13 +34,22 @@
 							<tr>
 
 								<th>
-									<h3>Monto total</h3>
+									<h3>Cliente Relacionado</h3>
 								</th>
 								<th>
-									<h3>Dirección relacionada</h3>
+									<h3>Calle</h3>
 								</th>
 								<th>
-									<h3>Cliente</h3>
+									<h3>Numero Direccion</h3>
+								</th>
+								<th>
+									<h3>Localidad</h3>
+								</th>
+								<th>
+									<h3>Municipio</h3>
+								</th>
+								<th>
+									<h3>Estado</h3>
 								</th>
 								<th>
 									<h3>Editar Registro</h3>
@@ -53,25 +62,19 @@
 						@foreach($usus as $usu)
 						<tbody>
 							<tr>
-								<td>$ {{ $usu->monto_total}}</td>
+								
+							@foreach($comps as $comp)
+							@if($usu->clientes_id  == $comp->id_usuario)
+								<td>{{ $comp->nombre}} {{ $comp->app}} {{ $comp->apm}}</td>
+							@endif
+							@endforeach
+							
+								<td>{{ $usu->calle}}</td>
+								<td>{{ $usu->numero_direccion}}</td>
+								<td>{{ $usu->localidad}}</td>
+								<td>{{ $usu->municipio}}</td>
+								<td>{{ $usu->estado}}</td>
 
-								@foreach($todos as $todo)
-
-								@if($todo->clientes_id == $usu->clientes_id )
-
-								<td>{{ $todo->calle }} <br>
-									{{ $todo->numero_direccion }} <br>
-									{{ $todo->estado }}</td>
-
-								@endif
-
-								@endforeach
-
-								@foreach($comps as $comp)
-								@if($usu->clientes_id == $comp->id_usuario )
-								<td>{{ $comp->app }} {{ $comp->apm }} {{ $comp->nombre }}</td>
-								@endif
-								@endforeach
 								<td>
 									<h3><a href="{{ route('modificarVentas', ['id' => $usu->id_venta]) }}"><i class="fas fa-pen-square"></i> Editar</a></h3>
 								</td>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\UsuariosModel;
 use App\VentasModel;
+use App\DireccionesModel;
 use App\MaterialesModel;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidarRequest;
@@ -30,9 +31,21 @@ class CRUDController extends Controller
         {
             $usus = VentasModel::all();
             $comps = UsuariosModel::all();
+            $todos = DireccionesModel::all();
             return  view("templates.ventas")
             ->with(['usus' => $usus])
+            ->with(['comps' => $comps])
+            ->with(['todos' => $todos]);
+        }
+
+        public function direcciones()
+        {
+            $usus = DireccionesModel::all();
+            $comps = UsuariosModel::all();
+            return  view("templates.direcciones")
+            ->with(['usus' => $usus])
             ->with(['comps' => $comps]);
+
         }
 
         

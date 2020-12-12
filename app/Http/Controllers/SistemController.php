@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DireccionesModel;
 use App\UsuariosModel;
 use App\ProductosModel;
 use App\Http\Requests\ValidarRequest;
@@ -9,6 +10,7 @@ use App\Http\Requests\ValidarProductosRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\VentasModel;
 use Illuminate\Http\Request;
 
 class SistemController extends Controller
@@ -189,11 +191,32 @@ class SistemController extends Controller
         
         return  view("templates.reporte_ventas");
 }
+
 public function detalleUsuario()
 {
     $usus = UsuariosModel::all();
     return view('templates.detalle_usuario')
      ->with(['usus' => $usus]);
+}
+
+public function registrarDireccion($id=null,$cantidad=null)
+{
+    $usus = UsuariosModel::find($id);
+    $direccion = DireccionesModel::find($id);
+    $ventas = VentasModel::all();
+    $comps = UsuariosModel::all();
+    $todos = DireccionesModel::all();
+
+    $usu = VentasModel::create(array(
+        'monto_total'    => $cantidad,
+        'direcciones_id' => $direccion->clientes_id,
+        'clientes_id'    => $id,
+     ));
+
+    return view('templates.ventas')
+    ->with(['usus' => $ventas])
+    ->with(['comps' => $comps])
+    ->with(['todos' => $todos]);
 }
 
 }

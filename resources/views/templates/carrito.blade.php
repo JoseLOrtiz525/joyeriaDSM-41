@@ -68,7 +68,7 @@
 									<th>CANTIDAD</th>
 									<th>PRECIO</th>
 									<th>ELIMINAR</th>
-									
+
 								</thead>
 								<tbody>
 									<input type="hidden" name="total" value="{{$total=0}}">
@@ -79,7 +79,6 @@
 										<td>{{$item->quantity}}</td>
 										<td>{{$item->price}}</td>
 										
-
 										<td>
 											<input type="hidden" name="total" value="{{$total=$total+ ($item->quantity * $item->price) }}">
 											<form action="{{route('cart.removeitem')}}" method="POST">
@@ -88,8 +87,9 @@
 												<button type="submit" class="btn btn-link btn-sm text-danger">x</button>
 											</form>
 										</td>
+<td><a href="{{ route('registrarDireccion', ['id' => $item->id,'cantidad' => $total]) }}" class="button big">Comprar</a><br></td>
 									</tr>
-									
+
 									@endforeach
 
 									<tr>
@@ -104,12 +104,16 @@
 							@else
 							<p>Carrito vacio</p>
 							<p>Regresa a Comprar!!</p>
+
 							@endif
 
-							<div class="derecha">
-								<a href="" class="button big">Comprar</a><br>
-							</div>
-							
+							@if(empty(session('session_tipo')))
+							<button href="{{ route('registrarDireccion', ['id' => $item->id,'cantidad' => $total]) }}" class="button big" disabled>Comprar</button>
+							<h2>Para comprar Inicia Sesion</h2>
+							@endif
+
+
+
 						</div>
 
 					</div>

@@ -118,7 +118,10 @@ Route::name('guardarVentas')->get('guardarVentas/{id?}', 'CrudController@guardar
 
 Route::name('detalleUsuario')->get('detalleUsuario/', 'SistemController@detalleUsuario');
 
+Route::name('registrarDireccion')->get('registrarDireccion/{id?}/{cantidad?}', 'SistemController@registrarDireccion');
 
+
+Route::name('direcciones')->get('direcciones/', 'CrudController@direcciones');
 
 
 
