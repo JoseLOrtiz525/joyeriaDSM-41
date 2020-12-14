@@ -1,6 +1,6 @@
 <?php
 
-// return[
+//  return  array[
 //     'client_id'=> env( key: 'PAYPAL_CLIENT_ID'),
 //     'secret'=> env(key:'PAYPAL_SECRET'),
 

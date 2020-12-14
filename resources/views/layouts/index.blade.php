@@ -29,6 +29,8 @@
 				<section id="banner">
 					<div class="content">
 						<header>
+
+						
 							<h1>El lujo no debe <br />
 								salir caro</h1>
 							<p>ANTECEDENTES DE LA ORGANIZACIÓN</p>
@@ -65,8 +67,12 @@
 							<div class="content">
 								<h3>VISIÓN DE LA ORGANIZACIÓN</h3>
 								<p>Crecer como empresa líder en el mercado de de venta de joyas de segunda mano en línea,buscando la innovación en el sector, motivados por la pasión y compromiso para nuestra empresa y sus nuevos intereses.</p>
+							
 							</div>
 						</article>
+						<script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+													<script>paypal.Buttons().render('body');</script>
+												
 						<!-- <article>
 							<span class="icon solid fa-rocket"></span>
 							<div class="content">

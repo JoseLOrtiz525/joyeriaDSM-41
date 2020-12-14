@@ -127,3 +127,6 @@ Route::name('direcciones')->get('direcciones/', 'CrudController@direcciones');
 //--------------------------------- Mapas google------------------------------------------
 Route::name('mapa')->get('mapa/', 'SistemController@mapa');
 
+//paypal
+
+Route::name('paypal')->get('paypal/', 'SistemController@paypal');

@@ -227,5 +227,9 @@ public function registrarDireccion($id=null,$cantidad=null)
     ->with(['comps' => $comps])
     ->with(['todos' => $todos]);
 }
-
+public function paypal()
+    {
+    
+        return  view("templates.paypal");
+    }
 }
